@@ -7,6 +7,10 @@ import { MODE } from './js/constants';
 const inputElement = document.querySelector(".search-input");
 const searchButtonElement = document.querySelector(".search-button");
 const galleryContainer = document.querySelector('.gallery');
+const MyLibraryBtn = document.querySelector("#library");
+const SearchForm = document.querySelector("#search-form");
+const WatchedQueueContainer = document.querySelector("#watched-queue-container");
+const headerHome = document.querySelector("header");
 
 let inputValue = "";
 let currentContent = [];
@@ -41,18 +45,15 @@ inputElement.addEventListener("input", inputEvent);
 searchButtonElement.addEventListener("click", searchMoviesEvent)
 
 
-//При нажатии по кнопке My Library пропадает input и появляются две кнопки(Начало)
-const MyLibraryBtn = document.querySelector("#library");
-const SearchForm = document.querySelector("#search-form");
-const WatchedQueueContainer = document.querySelector("#watched-queue-container");
-const headerHome = document.querySelector("header");
-
-MyLibraryBtn.addEventListener('click', onlibrary);
+//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(Начало)
 
 
-function onlibrary () {
+MyLibraryBtn.addEventListener('click', onClicklibraryBtn);
+
+function onClicklibraryBtn () {
 SearchForm.style.display = 'none';
 WatchedQueueContainer.style.display = 'block'; 
 headerHome.classList.replace('header-home', 'header-library');
-console.log(headerHome);
 }
+//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(конец)
+
