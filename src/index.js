@@ -42,5 +42,17 @@ searchButtonElement.addEventListener("click", searchMoviesEvent)
 
 
 //При нажатии по кнопке My Library пропадает input и появляются две кнопки(Начало)
+const MyLibraryBtn = document.querySelector("#library");
+const SearchForm = document.querySelector("#search-form");
+const WatchedQueueContainer = document.querySelector("#watched-queue-container");
+const headerHome = document.querySelector("header");
+
+MyLibraryBtn.addEventListener('click', onlibrary);
 
 
+function onlibrary () {
+SearchForm.style.display = 'none';
+WatchedQueueContainer.style.display = 'block'; 
+headerHome.classList.replace('header-home', 'header-library');
+console.log(headerHome);
+}
