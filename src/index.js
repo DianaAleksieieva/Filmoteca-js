@@ -1,5 +1,5 @@
 import './sass/main.scss';
-import 'tui-pagination/dist/tui-pagination.min.css';
+import 'tui-pagination/dist/tui-pagination.css';
 import './js/cardTemplates';
 import { getMovies } from './js/getMovies';
 import { MODE } from './js/constants';
