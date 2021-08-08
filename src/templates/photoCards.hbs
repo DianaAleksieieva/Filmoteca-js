@@ -1,12 +1,14 @@
+{{#each this}}
            <div class="photo-card">
                 <div class="image-thumb">
-                  <a class="image-link" href="#">
-               <img src="./images/Rectangle5.jpg" alt="#" loading="lazy" />
+                  <a class="image-link" href="https://image.tmdb.org/t/p/w500/{{backdrop_path}}">
+               <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" loading="lazy" />
                </a>
                </div>
                <div class="info">
-                 <p class="name-film">Название фильма</p>
-                 <p class="genres-year-film">Жанр1, жанр2, жанр3 | 2021</p>
+                 <p class="name-film">{{title}}</p>
+                 <p class="genres-year-film">{{genre_ids}} | {{release_date}}</p>
                </div>
              </div>
+{{/each}}
         
