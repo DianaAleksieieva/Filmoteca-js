@@ -1,10 +1,12 @@
 import './sass/main.scss';
 import './js/cardTemplates';
+import photoCardsTemplates from './templates/photoCards.hbs';
 import { getMovies } from './js/getMovies';
 import { MODE } from './js/constants';
 
 const inputElement = document.querySelector(".search-input");
 const searchButtonElement = document.querySelector(".search-button");
+const galleryContainer = document.querySelector('.gallery');
 
 let inputValue = "";
 let currentContent = [];
@@ -13,6 +15,7 @@ let currentContent = [];
 getMovies(MODE.popular, inputValue).then(data => {
   currentContent = data;
   console.log(currentContent);
+  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
 });
 
 
