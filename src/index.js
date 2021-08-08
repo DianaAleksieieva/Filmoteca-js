@@ -1,5 +1,5 @@
 import './sass/main.scss';
-
+import './js/cardTemplates';
 import { getMovies } from './js/getMovies';
 import { MODE } from './js/constants';
 
