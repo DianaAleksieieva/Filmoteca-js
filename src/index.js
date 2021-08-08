@@ -41,3 +41,6 @@ inputElement.addEventListener("input", inputEvent);
 searchButtonElement.addEventListener("click", searchMoviesEvent)
 
 
+//При нажатии по кнопке My Library пропадает input и появляются две кнопки(Начало)
+
+
