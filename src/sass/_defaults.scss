@@ -1,0 +1,30 @@
+body {
+  background-color: var(--white-color);
+  color: var(--black-color);
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+}
+
+a {
+  color: var(--black-color);
+  text-decoration: none;
+}
+
+button,
+a {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
