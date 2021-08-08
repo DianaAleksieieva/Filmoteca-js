@@ -1,0 +1,58 @@
+.footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #f7f7f7;
+}
+
+.lisense-footer {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  color: #545454;
+  font-size: 14px;
+  line-height: 1.14;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    line-height: 1.18;
+  }
+}
+
+.lisense {
+  margin: 0 0 10px 0;
+
+  @media screen and (min-width: 768px) {
+    margin: 0 3px 0 0;
+  }
+}
+
+.lisense-continuation {
+  margin: 0px;
+}
+
+.heart-icon {
+  width: 16px;
+  height: 14px;
+}
+
+.students {
+  margin: 0;
+  text-decoration: underline;
+  color: #545454;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    transform: scale(1.1);
+    // color: ;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .lisense-footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
