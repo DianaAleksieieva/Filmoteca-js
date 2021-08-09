@@ -9,13 +9,11 @@ export const getMovies = async (mode, input) => {
   try {
     if (mode === MODE.search) {
       if (input !== "") {
-        const response =  await axios.get(`${BASE_URL}${GET_BY_NAME}?${API_KEY}&query=${input}`);
-        return response.data.results;
+         return await axios.get(`${BASE_URL}${GET_BY_NAME}?${API_KEY}&query=${input}`);
       }
     }
     if (mode === MODE.popular) {
-      const response = await axios.get(`${BASE_URL}${GET_POPULAR}?${API_KEY}`);
-      return response.data.results;
+       return await axios.get(`${BASE_URL}${GET_POPULAR}?${API_KEY}`);
     }
   } catch (error) {
     console.log(error.message);

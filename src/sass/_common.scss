@@ -1,0 +1,21 @@
+.container {
+  min-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 70px 0px;
+  @media screen and (max-width: 768px) {
+    min-width: 768px;
+    padding: 0px 75px 0px;
+  }
+
+  @media screen and (max-width: 375px) {
+    min-width: 320px;
+    padding: 0px 20px 20px;
+  }
+}
+.tui-container {
+  margin-top: 50px;
+  @media screen and (max-width: 320px) {
+    margin-top: 40px;
+  }
+}
