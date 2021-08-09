@@ -4,15 +4,15 @@
     <a href="./index.html" class="logo__link"> 
       <img class="logo__img" src="./images/logo.png" alt="logo">
       <!-- <svg class="logo__icon" width="24px" height="24px">
-      <use href="./images/film.svg"></use> -->
-    </svg><p class="logo-text">Filmoteka</p>
+      <use href="./images/film.svg"></use></svg> -->
+    <p class="logo-text">Filmoteka</p>
     </a>
     <ul class="navigation__list">
       <li class="navigation__item list">
         <button type="button" class="navigation__link"> HOME </button>
       </li>
       <li class="navigation__item list">
-        <button type="button" class="navigation__link"> MY LIBRARY </button>
+        <button type="button" class="navigation__link" id="library"> MY LIBRARY </button>
       </li>
     </ul>
     </div>
@@ -21,6 +21,10 @@
       <button type="button" class="search-button"><img class="search-img" src="../src/images/search.svg" alt=""></button>
 
     </form>
+    <div id="watched-queue-container" style="display: none;">
+      <button type="button" class="watched-queue__button" id="watched-btn">WATCHED</button>
+      <button type="button" class="watched-queue__button" id="library-btn">QUEUE</button>
+    </div>
   </div>
 
 </header>
