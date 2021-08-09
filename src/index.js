@@ -5,6 +5,7 @@ import photoCardsTemplates from './templates/photoCards.hbs';
 import { getMovies } from './js/getMovies';
 import { MODE } from './js/constants';
 import Pagination from 'tui-pagination';
+import { onClickLibraryBtn, onClickHomeBtn }  from './js/onClickHomeLibraryBtn';
 
 
 const inputElement = document.querySelector('.search-input');
@@ -12,10 +13,9 @@ const searchButtonElement = document.querySelector('.search-button');
 const paginationContainer = document.querySelector('#tui-pagination-container');
 
 const galleryContainer = document.querySelector('.gallery');
-const MyLibraryBtn = document.querySelector("#library");
-const SearchForm = document.querySelector("#search-form");
-const WatchedQueueContainer = document.querySelector("#watched-queue-container");
-const headerHome = document.querySelector("header");
+
+const myLibraryBtn = document.querySelector("#library");
+const homeBtn = document.querySelector("#home");
 
 
 let inputValue = '';
@@ -69,16 +69,9 @@ function clearGalleryMarkup() {
    
 };
 
-//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(Начало)
-
-
-MyLibraryBtn.addEventListener('click', onClicklibraryBtn);
-
-function onClicklibraryBtn () {
-SearchForm.style.display = 'none';
-WatchedQueueContainer.style.display = 'block'; 
-headerHome.classList.replace('header-home', 'header-library');
-}
-//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(конец)
+//При нажатии по кнопке My Library (Home) пропадает input (появляется), меняется фон и появляются (пропадают) две кнопки(Начало)
+myLibraryBtn.addEventListener('click', onClickLibraryBtn);
+homeBtn.addEventListener('click', onClickHomeBtn);
+//(конец)
 
 
