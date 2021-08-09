@@ -16,9 +16,7 @@
       url('../images/library-background-img.jpg');
   }
 }
-// .header-library {
-//   background-image: url('../images/library-background-img.jpg');
-// }
+
 .logo__link {
   justify-content: center;
   display: flex;
@@ -38,11 +36,6 @@
   margin-right: 10px;
 }
 
-.container {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto;
-}
 .navigation {
   display: flex;
   justify-content: space-between;
