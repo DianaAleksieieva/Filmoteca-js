@@ -1,1 +1,2 @@
-import photoCardsTemplates from '../templates/photoCards.hbs';
+import genres from '../genres-list.json';
+console.log (genres);
