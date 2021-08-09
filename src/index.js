@@ -18,7 +18,6 @@ let currentContent = [];
 
 getMovies(MODE.popular, inputValue).then(data => {
   currentContent = data;
-  console.log(currentContent);
   galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
 });
 
@@ -29,9 +28,10 @@ const searchMoviesEvent = () => {
   }
   getMovies(MODE.search, inputValue).then(data => {
     if (data.length > 0) {
-      currentContent = data;
-      console.log(currentContent);
-      return;
+      currentContent = data; 
+      clearGalleryMarkup();
+      galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
+        return;
     }
     console.log("No results found.");
   })
@@ -44,6 +44,11 @@ const inputEvent = () => {
 inputElement.addEventListener("input", inputEvent);
 searchButtonElement.addEventListener("click", searchMoviesEvent)
 
+
+function clearGalleryMarkup() {
+    galleryContainer.innerHTML = '';
+   
+};
 
 //При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(Начало)
 
