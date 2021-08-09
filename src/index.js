@@ -6,7 +6,7 @@ import { getMovies } from './js/getMovies';
 import { MODE } from './js/constants';
 import Pagination from 'tui-pagination';
 import { onClickLibraryBtn, onClickHomeBtn }  from './js/onClickHomeLibraryBtn';
-// import onClickHomeBtn from './js/onClickHomeLibraryBtn';
+
 
 const inputElement = document.querySelector('.search-input');
 const searchButtonElement = document.querySelector('.search-button');
@@ -69,13 +69,9 @@ function clearGalleryMarkup() {
    
 };
 
-//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(Начало)
-
-
+//При нажатии по кнопке My Library (Home) пропадает input (появляется), меняется фон и появляются (пропадают) две кнопки(Начало)
 myLibraryBtn.addEventListener('click', onClickLibraryBtn);
 homeBtn.addEventListener('click', onClickHomeBtn);
-
-
-//При нажатии по кнопке My Library пропадает input, меняется фон и появляются две кнопки(конец)
+//(конец)
 
 
