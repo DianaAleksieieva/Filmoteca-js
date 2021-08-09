@@ -126,6 +126,23 @@
 }
 
 .watched-queue__button {
+
+    color: var(--white-color);
+    font-size: 12px;
+    margin-right: 0;
+    border: solid var(--white-color) 1px;
+    width: 136px;
+    height: 44px;
+    border-radius: 5px;
+    margin-top: 50px;
+}
+
+.watched-queue__button:hover {
+    background-color: var(--second-color);
+    filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+    cursor: pointer;
+    //
+
   color: var(--white-color);
   font-size: 12px;
   margin-right: 0;
@@ -134,6 +151,7 @@
   height: 44px;
   border-radius: 5px;
   margin-top: 50px;
+
 }
 
 #watched-btn {
