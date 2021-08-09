@@ -10,8 +10,7 @@ import Pagination from 'tui-pagination';
 const inputElement = document.querySelector('.search-input');
 const searchButtonElement = document.querySelector('.search-button');
 const paginationContainer = document.querySelector('#tui-pagination-container');
-const inputElement = document.querySelector(".search-input");
-const searchButtonElement = document.querySelector(".search-button");
+
 const galleryContainer = document.querySelector('.gallery');
 const MyLibraryBtn = document.querySelector("#library");
 const SearchForm = document.querySelector("#search-form");
