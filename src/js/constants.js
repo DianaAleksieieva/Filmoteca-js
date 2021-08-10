@@ -16,5 +16,9 @@ export const SearchForm = document.querySelector("#search-form");
 export const WatchedQueueContainer = document.querySelector("#watched-queue-container");
 export const headerHome = document.querySelector("header");
 
-
+export  const refsModal = {
+    openModal: document.querySelector('.gallery'),
+    closeModalBtn: document.querySelector('.modal-closeButton'),
+    modal: document.querySelector('.modal-backdrop'),
+  };
 
