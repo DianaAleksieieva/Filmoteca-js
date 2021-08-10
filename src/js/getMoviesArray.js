@@ -26,7 +26,7 @@ function changeGenres(movies) {
     const genreIds = movie.genre_ids;
      
     genreIds.forEach(genreId => {
-      movie.genre_ids[genreIndex] = genres.
+      movie.genre_ids[genreIndex] = " " + genres.
       find(option => option.id === genreId).name;
       
       genreIndex +=1;
@@ -38,7 +38,7 @@ function changeGenres(movies) {
 function updateGenres(movies) {
   movies.forEach(movie => {
     if (movie.genre_ids.length > 3) {
-      movie.genre_ids.splice(2,1, "Other");
+      movie.genre_ids.splice(2,1," Other");
       movie.genre_ids = movie.genre_ids.slice(0, 3);
     }
   
