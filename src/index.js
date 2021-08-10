@@ -1,5 +1,6 @@
 import './sass/main.scss';
-import './js/pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+import './js/cardTemplates';
 import './js/homepage';
 
-import './js/modal';
+
