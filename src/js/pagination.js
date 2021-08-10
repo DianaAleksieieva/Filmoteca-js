@@ -10,6 +10,7 @@ import { MODE } from './constants';
 const optionsPagination = {
   itemsPerPage: 0,
   visiblePages: 10,
+  page: 1,
 };
 export const pagination = new Pagination(paginationContainer, optionsPagination);
 
