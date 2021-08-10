@@ -25,5 +25,6 @@ export const refsModal = {
 export const alreadyWatched = document.querySelector('#alreadyWatched');
 export const queueWatched = document.querySelector('#queueWatched');
 
+
 export const watched = document.querySelector('#watched-btn');
 export const queue = document.querySelector('#queue-btn');
