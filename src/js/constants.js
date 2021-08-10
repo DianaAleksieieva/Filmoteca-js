@@ -6,5 +6,19 @@ export const MODE = {
   search: "search",
   popular: "popular"
 };
+export const inputElement = document.querySelector('.search-input');
+export const searchButtonElement = document.querySelector('.search-button');
+export const paginationContainer = document.querySelector('#tui-pagination-container');
+export const galleryContainer = document.querySelector('.gallery');
+export const myLibraryBtn = document.querySelector("#library");
+export const homeBtn = document.querySelector("#home");
+export const SearchForm = document.querySelector("#search-form");
+export const WatchedQueueContainer = document.querySelector("#watched-queue-container");
+export const headerHome = document.querySelector("header");
 
+export  const refsModal = {
+    openModal: document.querySelector('.gallery'),
+    closeModalBtn: document.querySelector('.modal-closeButton'),
+    modal: document.querySelector('.modal-backdrop'),
+  };
 
