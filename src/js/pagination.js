@@ -1,8 +1,8 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { getMovies } from './getMovies';
+import { paginationContainer } from './constants';
 
-const paginationContainer = document.querySelector('#tui-pagination-container');
 const optionsPagination = {
   itemsPerPage: 1,
   visiblePages: 10,
