@@ -1,23 +1,19 @@
-import Pagination from 'tui-pagination';
 import { getMoviesArray } from './getMoviesArray';
-import { galleryContainer, homeBtn, inputElement, MODE, myLibraryBtn, searchButtonElement, paginationContainer } from './constants';
+import {
+  galleryContainer,
+  homeBtn,
+  inputElement,
+  MODE,
+  myLibraryBtn,
+  searchButtonElement,
+  paginationContainer,
+} from './constants';
 import photoCardsTemplates from '../templates/photoCards.hbs';
-import {onClickHomeBtn, onClickLibraryBtn} from './onClickHomeLibraryBtn';
+import { onClickHomeBtn, onClickLibraryBtn } from './onClickHomeLibraryBtn';
 import { clearGalleryMarkup } from './utils';
-
+import { pagination } from './pagination';
 let inputValue = '';
 let currentContent = [];
-
-const optionsPagination = {
-  itemsPerPage: 1,
-  visiblePages: 10,
-  page: 1,
-};
-const pagination = new Pagination(paginationContainer, optionsPagination);
-pagination.on('afterMove', event => {
-  const currentPage = event.page;
-  console.log(currentPage);
-});
 
 getMoviesArray(MODE.popular, inputValue).then(data => {
   currentContent = data;
@@ -25,7 +21,7 @@ getMoviesArray(MODE.popular, inputValue).then(data => {
   galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
 });
 
-const searchMoviesCallback = ( ) => {
+const searchMoviesCallback = () => {
   if (!inputValue) {
     return;
   }
@@ -40,11 +36,11 @@ const searchMoviesCallback = ( ) => {
   });
 };
 
-const inputCallback = ( ) => {
+const inputCallback = () => {
   inputValue = inputElement.value.trim().replace(' ', '%20');
 };
 
-inputElement.addEventListener('input', inputCallback );
+inputElement.addEventListener('input', inputCallback);
 searchButtonElement.addEventListener('click', searchMoviesCallback);
 //
 myLibraryBtn.addEventListener('click', onClickLibraryBtn);
