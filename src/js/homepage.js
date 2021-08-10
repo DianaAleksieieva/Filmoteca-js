@@ -31,8 +31,6 @@ const searchMoviesCallback = ( ) => {
     return;
   }
 
- 
-
   getMoviesArray(MODE.search, inputValue).then(data => {
     if (data.length > 0) {
       currentContent = data;
@@ -43,7 +41,6 @@ const searchMoviesCallback = ( ) => {
     console.log('No results found.');
     
     notificationFunc();
-
   });
 };
 
