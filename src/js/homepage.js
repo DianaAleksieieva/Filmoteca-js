@@ -4,6 +4,7 @@ import { galleryContainer, homeBtn, inputElement, MODE, myLibraryBtn, searchButt
 import photoCardsTemplates from '../templates/photoCards.hbs';
 import {onClickHomeBtn, onClickLibraryBtn} from './onClickHomeLibraryBtn';
 import { clearGalleryMarkup } from './utils';
+import { notificationFunc } from './notificationHeader';
 
 let inputValue = '';
 let currentContent = [];
@@ -37,6 +38,9 @@ const searchMoviesCallback = ( ) => {
       return;
     }
     console.log('No results found.');
+    
+    notificationFunc();
+
   });
 };
 
