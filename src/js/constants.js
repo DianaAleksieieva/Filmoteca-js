@@ -19,6 +19,7 @@ export const headerHome = document.querySelector("header");
 export  const refsModal = {
     openModal: document.querySelector('.gallery'),
     closeModalBtn: document.querySelector('.modal-closeButton'),
-    modal: document.querySelector('.modal-backdrop'),
+  modal: document.querySelector('.modal-backdrop'),
+    modalContainer: document.querySelector('.modal-container')
   };
 
