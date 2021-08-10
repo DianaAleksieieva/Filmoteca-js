@@ -30,6 +30,9 @@ const searchMoviesCallback = ( ) => {
   if (!inputValue) {
     return;
   }
+
+ 
+
   getMoviesArray(MODE.search, inputValue).then(data => {
     if (data.length > 0) {
       currentContent = data;
