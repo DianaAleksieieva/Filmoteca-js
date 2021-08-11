@@ -9,6 +9,7 @@
   top: 0;
   left: 0;
   background-color: var(--backdrop);
+  transition: linear 0.3s;
 }
 .modal-pop-up {
   position: absolute;

@@ -20,7 +20,7 @@ export const notificationMessage = document.querySelector('#message');
 export const refsModal = {
     openModal: document.querySelector('.gallery'),
     closeModalBtn: document.querySelector('.modal-closeButton'),
-  modal: document.querySelector('.modal-backdrop'),
+    modal: document.querySelector('.modal-backdrop'),
     modalContainer: document.querySelector('.modal-container')
   };
 
