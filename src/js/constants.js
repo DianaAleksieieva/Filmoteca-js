@@ -24,8 +24,6 @@ export const refsModal = {
     modalContainer: document.querySelector('.modal-container')
   };
 
-    modal: document.querySelector('.modal-backdrop'),
-};
 
 export const alreadyWatched = document.querySelector('#alreadyWatched');
 export const queueWatched = document.querySelector('#queueWatched');
