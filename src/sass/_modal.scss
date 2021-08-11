@@ -1,0 +1,135 @@
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+.modal-backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--backdrop);
+}
+.modal-pop-up {
+  position: absolute;
+  width: 280px;
+  //   max-width: 280px;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  padding: 48px 20px 40px 20px;
+  height: 600px;
+  overflow-y: scroll;
+}
+.modal-pop-up::-webkit-scrollbar {
+  width: 0px;
+  scrollbar-width: none;
+}
+
+.modal-closeButton {
+  padding: 0;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: white;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.modal-image-thumb {
+  height: 357px;
+}
+.modal-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.modal-title {
+  display: block;
+  font-family: Roboto;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  margin-top: 30px;
+  color: #000000;
+}
+
+.modal-parameters {
+  margin-top: 20px;
+}
+.modal-parameters-list {
+  list-style: none;
+  padding: 0;
+}
+.modal-parameter-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
+}
+.modal-parameter {
+  //   display: flex;
+  //   justify-content: space-evenly;
+  margin-top: 10px;
+  left: 0;
+}
+.modal-parameter-value {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.modal-desctiption {
+  margin-top: 20px;
+}
+.modal-desctiption-title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.modal-desctiption-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #000000;
+  text-align: justify;
+}
+
+.modal-button-list {
+  margin-top: 21px;
+  display: flex;
+  justify-content: space-between;
+}
+.modal-button {
+  text-transform: uppercase;
+  width: 112px;
+  border-radius: 5px;
+  border: none;
+  background-color: orange;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
