@@ -1,13 +1,13 @@
 import { refsModal } from './constants';
+import { BASE_URL } from "./constants";
+import { API_KEY } from './constants';
+import axios from "axios";
+import modalTpl from '../templates/modalMovieCardTpl.hbs';
+
 let movieCards;
-
-    refsModal.closeModalBtn.addEventListener('click', toggleModal);
-
-    function toggleModal(event) {
-        event.preventDefault();
-        console.log(event.currentTarget);
-        refsModal.modal.classList.toggle('is-hidden');
-    }
+let movieID;
+let movieContent
+refsModal.closeModalBtn.addEventListener('click', modalClose);
 
 
 
@@ -18,16 +18,46 @@ const config = {
     subtree: false
 };
 
-const callback = function(mutationsList, observer) {
+const callback = function(mutationsList) {
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            movieCards = document.querySelectorAll('.photo-card')
-            movieCards.forEach((item) => { item.addEventListener('click', toggleModal) })
-            // movieCard.addEventListener('click', toggleModal);
-            console.log(movieCards);
+            movieCards = document.querySelectorAll('.photo-card');
+            movieCards.forEach((item) => { item.addEventListener('click', modalOpen) });
         }
     }
 };
 
 const observer = new MutationObserver(callback);
 observer.observe(target, config);
+
+
+
+function modalOpen(event) {
+    event.preventDefault();
+    movieID = event.currentTarget.dataset.id;
+    getMovie().then(movieData => {
+        movieContent = movieData;
+        refsModal.modalContainer.insertAdjacentHTML('afterbegin', modalTpl(movieContent));
+        console.log(movieContent);
+    });
+    refsModal.modal.classList.toggle('is-hidden');
+}
+
+
+function modalClose() {
+    refsModal.modal.classList.toggle('is-hidden');
+    refsModal.modalContainer.innerHTML = '';
+}
+
+
+
+const getMovie = async () => {
+  try {
+      const response = await axios.get(`${BASE_URL}movie/${movieID}?${API_KEY}&language=en-US`);
+    return response.data;
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+observer.observe(target, config);
+
