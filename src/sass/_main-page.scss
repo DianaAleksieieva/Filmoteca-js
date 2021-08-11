@@ -68,6 +68,17 @@
   color: #ff6b08;
 }
 
+.rating {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  padding: 1px 6px;
+  margin-left: 10px;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--second-color);
+}
+
 .gallery {
   // padding: 60px 70px 50px;
 }

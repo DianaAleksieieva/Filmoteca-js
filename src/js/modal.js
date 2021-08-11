@@ -59,3 +59,5 @@ const getMovie = async () => {
     console.log(error.message);
   }
 }
+observer.observe(target, config);
+
