@@ -1,59 +1,71 @@
-import Pagination from 'tui-pagination';
 import { getMoviesArray } from './getMoviesArray';
-import { galleryContainer, homeBtn, inputElement, MODE, myLibraryBtn, searchButtonElement, paginationContainer, DEBOUNCE_DELAY } from './constants';
+import {
+  galleryContainer,
+  homeBtn,
+  inputElement,
+  MODE,
+  myLibraryBtn,
+  searchButtonElement,
+  DEBOUNCE_DELAY,
+} from './constants';
 import photoCardsTemplates from '../templates/photoCards.hbs';
-import {onClickHomeBtn, onClickLibraryBtn} from './onClickHomeLibraryBtn';
+import { onClickHomeBtn, onClickLibraryBtn } from './onClickHomeLibraryBtn';
 import { clearGalleryMarkup } from './utils';
 import { notificationFunc } from './notificationHeader';
 import debounce from 'lodash.debounce';
-
+import { pagination } from './pagination';
 
 let inputValue = '';
 let currentContent = [];
 
-const optionsPagination = {
-  itemsPerPage: 1,
-  visiblePages: 10,
-  page: 1,
-};
-const pagination = new Pagination(paginationContainer, optionsPagination);
+let page = pagination.getCurrentPage();
+
 pagination.on('afterMove', event => {
-  const currentPage = event.page;
-  console.log(currentPage);
+  page = event.page;
+  if (!inputValue) {
+    getMoviesArray(MODE.popular, inputValue, page).then(data => {
+      currentContent = data;
+      renderCardfilm(currentContent);
+    });
+  } else {
+    getMoviesArray(MODE.search, inputValue, page).then(data => {
+      currentContent = data;
+      renderCardfilm(currentContent);
+    });
+  }
 });
-
-getMoviesArray(MODE.popular, inputValue).then(data => {
+getMoviesArray(MODE.popular, inputValue, page).then(data => {
   currentContent = data;
-  pagination.reset(currentContent.length);
-  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
+  renderCardfilm(currentContent);
 });
-
-const searchMoviesCallback = ( ) => {
+const searchMoviesCallback = () => {
   if (!inputValue) {
     return;
   }
 
-  getMoviesArray(MODE.search, inputValue).then(data => {
+  getMoviesArray(MODE.search, inputValue, page).then(data => {
     if (data.length > 0) {
       currentContent = data;
       clearGalleryMarkup();
-      galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
+      renderCardfilm(currentContent);
       return;
     }
     console.log('No results found.');
-    
+
     notificationFunc();
-    
   });
 };
 
-const inputCallback = ( ) => {
+const inputCallback = () => {
   inputValue = inputElement.value.trim().replace(' ', '%20');
   searchMoviesCallback();
 };
 
-inputElement.addEventListener('input', debounce(inputCallback,DEBOUNCE_DELAY));
+inputElement.addEventListener('input', debounce(inputCallback, DEBOUNCE_DELAY));
 searchButtonElement.addEventListener('click', searchMoviesCallback);
 //
 myLibraryBtn.addEventListener('click', onClickLibraryBtn);
 homeBtn.addEventListener('click', onClickHomeBtn);
+const renderCardfilm = content => {
+  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
+};
