@@ -8,7 +8,6 @@ import { notificationFunc } from './notificationHeader';
 
 let inputValue = '';
 let currentContent = [];
-let page = 1;
 
 const optionsPagination = {
   itemsPerPage: 1,
@@ -21,10 +20,10 @@ pagination.on('afterMove', event => {
   console.log(currentPage);
 });
 
-
-getMoviesArray(MODE.popular, inputValue, page).then(data => {
+getMoviesArray(MODE.popular, inputValue).then(data => {
   currentContent = data;
-  renderCardfilm(currentContent);
+  pagination.reset(currentContent.length);
+  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
 });
 
 const searchMoviesCallback = ( ) => {
@@ -32,13 +31,11 @@ const searchMoviesCallback = ( ) => {
     return;
   }
 
-
-
-  getMoviesArray(MODE.search, inputValue, page).then(data => {
+  getMoviesArray(MODE.search, inputValue).then(data => {
     if (data.length > 0) {
       currentContent = data;
       clearGalleryMarkup();
-      renderCardfilm(currentContent);
+      galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(currentContent));
       return;
     }
     console.log('No results found.');
@@ -51,10 +48,8 @@ const inputCallback = ( ) => {
   inputValue = inputElement.value.trim().replace(' ', '%20');
 };
 
-const renderCardfilm = content => {
-  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
-};
-inputElement.addEventListener('input', inputCallback);
+inputElement.addEventListener('input', inputCallback );
 searchButtonElement.addEventListener('click', searchMoviesCallback);
+//
 myLibraryBtn.addEventListener('click', onClickLibraryBtn);
 homeBtn.addEventListener('click', onClickHomeBtn);
