@@ -1,10 +1,12 @@
 import Pagination from 'tui-pagination';
 import { getMoviesArray } from './getMoviesArray';
-import { galleryContainer, homeBtn, inputElement, MODE, myLibraryBtn, searchButtonElement, paginationContainer } from './constants';
+import { galleryContainer, homeBtn, inputElement, MODE, myLibraryBtn, searchButtonElement, paginationContainer, DEBOUNCE_DELAY } from './constants';
 import photoCardsTemplates from '../templates/photoCards.hbs';
 import {onClickHomeBtn, onClickLibraryBtn} from './onClickHomeLibraryBtn';
 import { clearGalleryMarkup } from './utils';
 import { notificationFunc } from './notificationHeader';
+import debounce from 'lodash.debounce';
+
 
 let inputValue = '';
 let currentContent = [];
@@ -41,14 +43,16 @@ const searchMoviesCallback = ( ) => {
     console.log('No results found.');
     
     notificationFunc();
+    
   });
 };
 
 const inputCallback = ( ) => {
   inputValue = inputElement.value.trim().replace(' ', '%20');
+  searchMoviesCallback();
 };
 
-inputElement.addEventListener('input', inputCallback );
+inputElement.addEventListener('input', debounce(inputCallback,DEBOUNCE_DELAY));
 searchButtonElement.addEventListener('click', searchMoviesCallback);
 //
 myLibraryBtn.addEventListener('click', onClickLibraryBtn);
