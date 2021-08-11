@@ -15,6 +15,7 @@ export const homeBtn = document.querySelector('#home');
 export const SearchForm = document.querySelector('#search-form');
 export const WatchedQueueContainer = document.querySelector('#watched-queue-container');
 export const headerHome = document.querySelector('header');
+export const notificationMessage = document.querySelector('#message');
 
 export const refsModal = {
     openModal: document.querySelector('.gallery'),
