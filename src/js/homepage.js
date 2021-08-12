@@ -30,7 +30,7 @@ pagination.on('afterMove', event => {
       updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
-      smoothScroll(page);
+      smoothScroll();
     });
   } else {
     getMovies(MODE.search, inputValue, page).then(response => {
@@ -41,7 +41,7 @@ pagination.on('afterMove', event => {
       updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
-      smoothScroll(page);
+      smoothScroll();
     });
   }
 });
@@ -87,11 +87,9 @@ searchButtonElement.addEventListener('click', () => {
     notificationFunc();
   }
 });
-function smoothScroll(page) {
-  if (page !== 1) {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  }
+function smoothScroll() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+  });
 }
