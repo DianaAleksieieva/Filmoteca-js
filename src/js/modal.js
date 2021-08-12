@@ -41,12 +41,14 @@ function modalOpen(event) {
         console.log(movieContent);
     });
     refsModal.modal.classList.toggle('is-hidden');
+    document.querySelector('body').classList.add('scroll-blocked');
 }
 
 
 function modalClose() {
     refsModal.modal.classList.toggle('is-hidden');
     refsModal.modalContainer.innerHTML = '';
+    document.querySelector('body').classList.remove('scroll-blocked');
 }
 
 
