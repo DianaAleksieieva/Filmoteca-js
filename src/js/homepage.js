@@ -72,3 +72,8 @@ homeBtn.addEventListener('click', onClickHomeBtn);
 const renderCardfilm = content => {
   galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
 };
+
+searchButtonElement.addEventListener('click', () => {inputValue = inputElement.value.trim();
+  if (!inputValue) {
+    notificationFunc();
+    }});
