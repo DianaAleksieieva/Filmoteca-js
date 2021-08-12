@@ -14,20 +14,21 @@ export const getMoviesArray = async (mode, input, page) => {
   return movies;
 };
 
-function changeDate(movies) {
+export const changeDate =(movies) => {
   movies.forEach(movie => {
-    movie.release_date = movie.release_date.slice(0, 4);
+    if (movie.release_date){
+      movie.release_date = movie.release_date.slice(0, 4);} 
   });
 }
 
-function changeGenres(movies) {
+export const changeGenres =(movies) =>{
   let genreIndex = 0;
 
   movies.forEach(movie => {
     const genreIds = movie.genre_ids;
 
     genreIds.forEach(genreId => {
-      if (movie.genre_ids[genreIndex] === 10765) {
+      if (!genres.find(option => option.id === genreId))  {
         movie.genre_ids[genreIndex] = 'Other';
       } else {
         movie.genre_ids[genreIndex] = ' ' + genres.find(option => option.id === genreId).name;
@@ -39,7 +40,7 @@ function changeGenres(movies) {
   });
 }
 
-function updateGenres(movies) {
+export const updateGenres =(movies) => {
   movies.forEach(movie => {
     if (movie.genre_ids.length > 3) {
       movie.genre_ids.splice(2, 1, ' Other');

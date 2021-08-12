@@ -1,4 +1,4 @@
-import { getMoviesArray } from './getMoviesArray';
+import { getMoviesArray, changeDate, changeGenres, updateGenres  } from './getMoviesArray';
 import {
   galleryContainer,
   homeBtn,
@@ -25,6 +25,9 @@ pagination.on('afterMove', event => {
     getMovies(MODE.popular, inputValue, page).then(response => {
       currentContent = response.data.results;
 
+      changeDate(currentContent);
+      changeGenres(currentContent);
+      updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
     });
@@ -32,6 +35,9 @@ pagination.on('afterMove', event => {
     getMovies(MODE.search, inputValue, page).then(response => {
       currentContent = response.data.results;
 
+      changeDate(currentContent);
+      changeGenres(currentContent);
+      updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
     });
