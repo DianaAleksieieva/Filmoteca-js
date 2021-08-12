@@ -3,6 +3,7 @@ import { paginationContainer } from './constants';
 const optionsPagination = {
   itemsPerPage: 1,
   visiblePages: 10,
+  centerAlign: true,
 
   page: 1,
 };
