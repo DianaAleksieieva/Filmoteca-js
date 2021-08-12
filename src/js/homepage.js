@@ -14,22 +14,25 @@ import { clearGalleryMarkup } from './utils';
 import { notificationFunc } from './notificationHeader';
 import debounce from 'lodash.debounce';
 import { pagination } from './pagination';
+import { getMovies } from './getMovies';
 
 let inputValue = '';
 let currentContent = [];
-
-let page = pagination.getCurrentPage();
-
+let page = 1;
 pagination.on('afterMove', event => {
-  page = event.page;
+  const page = event.page;
   if (!inputValue) {
-    getMoviesArray(MODE.popular, inputValue, page).then(data => {
-      currentContent = data;
+    getMovies(MODE.popular, inputValue, page).then(response => {
+      currentContent = response.data.results;
+
+      clearGalleryMarkup();
       renderCardfilm(currentContent);
     });
   } else {
-    getMoviesArray(MODE.search, inputValue, page).then(data => {
-      currentContent = data;
+    getMovies(MODE.search, inputValue, page).then(response => {
+      currentContent = response.data.results;
+
+      clearGalleryMarkup();
       renderCardfilm(currentContent);
     });
   }
