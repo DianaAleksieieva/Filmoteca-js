@@ -1,4 +1,4 @@
-import { getMoviesArray, changeDate, changeGenres, updateGenres  } from './getMoviesArray';
+import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMoviesArray';
 import {
   galleryContainer,
   homeBtn,
@@ -30,6 +30,7 @@ pagination.on('afterMove', event => {
       updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
+      smoothScroll(page);
     });
   } else {
     getMovies(MODE.search, inputValue, page).then(response => {
@@ -40,6 +41,7 @@ pagination.on('afterMove', event => {
       updateGenres(currentContent);
       clearGalleryMarkup();
       renderCardfilm(currentContent);
+      smoothScroll(page);
     });
   }
 });
@@ -79,7 +81,17 @@ const renderCardfilm = content => {
   galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
 };
 
-searchButtonElement.addEventListener('click', () => {inputValue = inputElement.value.trim();
+searchButtonElement.addEventListener('click', () => {
+  inputValue = inputElement.value.trim();
   if (!inputValue) {
     notificationFunc();
-    }});
+  }
+});
+function smoothScroll(page) {
+  if (page !== 1) {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+}
