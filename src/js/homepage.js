@@ -15,6 +15,8 @@ import { notificationFunc } from './notificationHeader';
 import debounce from 'lodash.debounce';
 import { pagination } from './pagination';
 import { getMovies } from './getMovies';
+import { clearSpiner, showSpinner } from './spinner';
+
 
 let inputValue = '';
 let currentContent = [];
@@ -59,6 +61,7 @@ const searchMoviesCallback = () => {
       currentContent = data;
       clearGalleryMarkup();
       renderCardfilm(currentContent);
+      clearSpiner();
       return;
     }
     console.log('No results found.');
@@ -85,6 +88,9 @@ searchButtonElement.addEventListener('click', () => {
   inputValue = inputElement.value.trim();
   if (!inputValue) {
     notificationFunc();
+  } 
+  else {
+    showSpinner ();
   }
 });
 function smoothScroll() {
