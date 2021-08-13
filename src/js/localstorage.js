@@ -1,21 +1,22 @@
 import { alreadyWatched } from './constants';
 import { queueWatched } from './constants';
 
-// var obj = {
-//     cardPicture: '',
-// };
+import { getMovie } from './modal';
 
-// alreadyWatched.onclick = function() {
-//     localStorage.setItem('WATCHED', 1);
-//     // 
-//     // localStorage.removeItem('WATCHED');
-//     // console.log('qwe');
-// };
+alreadyWatched.onclick = function() {
+    localStorage.setItem(
+        'Watched',
+        getMovie().then(function(value) {
+            JSON.stringify(value);
+        }),
+    );
+};
 
-// queueWatched.onclick = function() {
-//     localStorage.setItem('QUEUE', 2);
-//     // 
-//     // localStorage.removeItem('QUEUE');
-//     // console.log('qwe');
-// };
-
+queueWatched.onclick = function() {
+    localStorage.setItem(
+        'Queue',
+        getMovie().then(function(value) {
+            JSON.stringify(value);
+        }),
+    );
+};

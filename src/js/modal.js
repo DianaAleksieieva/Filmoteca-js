@@ -1,7 +1,7 @@
 import { refsModal } from './constants';
-import { BASE_URL } from "./constants";
+import { BASE_URL } from './constants';
 import { API_KEY } from './constants';
-import axios from "axios";
+import axios from 'axios';
 import modalTpl from '../templates/modalMovieCardTpl.hbs';
 
 let movieCards;
@@ -10,34 +10,33 @@ let movieContent;
 
 refsModal.closeModalBtn.addEventListener('click', modalClose);
 
-refsModal.modal.addEventListener('click', (event) => {
+refsModal.modal.addEventListener('click', event => {
     if (event.target !== refsModal.modal) {
-        return
+        return;
     }
     modalClose();
 });
- 
 
 const target = refsModal.openModal;
 const config = {
     attributes: false,
     childList: true,
-    subtree: false
+    subtree: false,
 };
 
 const callback = function(mutationsList) {
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
             movieCards = document.querySelectorAll('.photo-card');
-            movieCards.forEach((item) => { item.addEventListener('click', modalOpen) });
+            movieCards.forEach(item => {
+                item.addEventListener('click', modalOpen);
+            });
         }
     }
 };
 
 const observer = new MutationObserver(callback);
 observer.observe(target, config);
-
-
 
 function modalOpen(event) {
     event.preventDefault();
@@ -55,7 +54,6 @@ function modalOpen(event) {
     window.addEventListener('keydown', onEscKeydown);
 }
 
-
 function modalClose() {
     window.removeEventListener('keydown', onEscKeydown);
     refsModal.modal.classList.toggle('is-hidden');
@@ -65,17 +63,15 @@ function modalClose() {
 
 function onEscKeydown(event) {
     if (event.code === 'Escape') {
-        modalClose()
+        modalClose();
     }
 }
 
-
-
-const getMovie = async () => {
-  try {
-      const response = await axios.get(`${BASE_URL}movie/${movieID}?${API_KEY}&language=en-US`);
-    return response.data;
-  } catch (error) {
-    console.log(error.message);
-  }
-}
+export const getMovie = async() => {
+    try {
+        const response = await axios.get(`${BASE_URL}movie/${movieID}?${API_KEY}&language=en-US`);
+        return response.data;
+    } catch (error) {
+        console.log(error.message);
+    }
+};
