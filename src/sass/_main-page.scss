@@ -5,34 +5,39 @@
   padding: 0;
 }
 
+
 .photo-card {
-  width: 274px;
   margin-bottom: 30px;
 
-  @media screen and (max-width: 768px) {
-    width: 293px;
+  @media screen and (min-width: 320px) {
+    max-width: 280px;
   }
 
-  @media screen and (max-width: 320px) {
-    width: 280px;
+  @media screen and (min-width: 768px) {
+    max-width: 293px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    max-width: 274px;
   }
 }
 
 .image-thumb {
-  width: 274px;
+  @media screen and (min-width: 320px) {
+    width: 280px;
+  }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 768px) {
     width: 293px;
   }
 
-  @media screen and (max-width: 320px) {
-    width: 280px;
+  @media screen and (min-width: 1024px) {
+    width: 274px;
   }
 }
 
 .image-card {
-  width: 274px;
-  height: 400px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
 }
@@ -58,13 +63,32 @@
 }
 
 .gallery {
-  padding: 60px 70px 50px;
-}
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
 
-// .photo-card {
-//   position: relative;
-//   height: 100%;
-// }
+  @media screen and (min-width: 320px) {
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 320px;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 768px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1024px;
+  }
+
+}
+//$cardwidth-desktop $cardwidth-desktop $cardwidth-desktop
+
+
 
 // .photo-card > img {
 //   height: 78%;
