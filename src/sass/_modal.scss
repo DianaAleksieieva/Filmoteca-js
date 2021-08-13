@@ -9,8 +9,9 @@
   top: 0;
   left: 0;
   background-color: var(--backdrop);
+  transition: linear 0.3s;
 }
-.modal-container {
+.modal-pop-up {
   position: absolute;
   width: 280px;
   //   max-width: 280px;
@@ -22,7 +23,7 @@
   height: 600px;
   overflow-y: scroll;
 }
-.modal-container::-webkit-scrollbar {
+.modal-pop-up::-webkit-scrollbar {
   width: 0px;
   scrollbar-width: none;
 }
@@ -132,4 +133,9 @@
   line-height: 16px;
   padding-left: 6px;
   padding-right: 6px;
+}
+
+.scroll-blocked {
+  height: 100vh;
+  overflow: hidden;
 }
