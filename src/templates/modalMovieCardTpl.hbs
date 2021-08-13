@@ -1,0 +1,39 @@
+<div class="modal-image-thumb">
+    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"
+        alt="{{title}}" width="240px" class="modal-image" />
+</div>
+<span class="modal-title">{{title}}</span>
+
+<div class="modal-parameters">
+    <ul class="modal-parameters-list">
+        <li class="modal-parameter">
+            <span class="modal-parameter-title">Vote /
+                Votes</span>
+            <span
+                class="modal-parameter-value"><span>{{vote_average}}</span>
+                / <span>{{vote_count}}</span></span>
+        </li>
+        <li class="modal-parameter">
+            <span
+                class="modal-parameter-title">Popularity</span>
+            <span class="modal-parameter-value">{{popularity}}</span>
+        </li>
+        <li class="modal-parameter">
+            <span class="modal-parameter-title">Original
+                Title</span>
+            <span class="modal-parameter-value">{{title}}</span>
+        </li>
+        <li class="modal-parameter">
+            <span class="modal-parameter-title">Genre</span>
+            <span class="modal-parameter-value">{{mainGenre}}
+            </span>
+        </li>
+    </ul>
+</div>
+
+<div class="modal-desctiption">
+    <span class="modal-desctiption-title">About</span>
+    <p class="modal-desctiption-text">
+        {{overview}}
+    </p>
+</div>

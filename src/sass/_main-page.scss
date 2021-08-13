@@ -7,10 +7,12 @@
 
 
 .photo-card {
+
   margin-bottom: 30px;
 
   @media screen and (min-width: 320px) {
     max-width: 280px;
+
   }
 
   @media screen and (min-width: 768px) {
@@ -52,6 +54,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+  font-family: Roboto;
   color: var(--black-color);
 }
 
@@ -59,7 +62,19 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
+
   color: var(--second-color);
+}
+
+.rating {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.16;
+  padding: 1px 6px;
+  margin-left: 10px;
+  border-radius: 5px;
+  color: var(--white-color);
+  background-color: var(--second-color);
 }
 
 .gallery {
