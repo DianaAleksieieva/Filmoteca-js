@@ -92,4 +92,4 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"./constants":"MuPq"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/pagination"),require("./js/homepage"),require("./js/localstorage"),require("./js/modal");
 },{"./sass/main.scss":"clu1","./js/pagination":"o8lo","./js/homepage":"aeqv","./js/localstorage":"MoVy","./js/modal":"RSqK"}]},{},["Focm"], null)
-//# sourceMappingURL=/DianaAleksieieva/src.d2d444ee.js.map
+//# sourceMappingURL=/DianaAleksieieva/src.da25590d.js.map
