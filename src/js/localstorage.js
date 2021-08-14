@@ -5,18 +5,18 @@ import { getMovie } from './modal';
 
 let watchedMassWithdrawal;
 let queueMassWithdrawal;
-
-let queueMass = [];
 const currentChosenMovie = {};
 
 alreadyWatched.onclick = function() {
-    getMovie().then(function(value) {
+    getMovie().then(function (value) {
         watchedMassWithdrawal = JSON.parse(localStorage.getItem('Watched')) || [];
         addCurrentMovie(value);
-        if (checkMovieInLocalStorage(watchedMassWithdrawal).length >= 1) {
-            return;
+        let index = checkMovieInLocalStorage(watchedMassWithdrawal);
+        if (index !== -1) {
+            watchedMassWithdrawal.splice(index, 1);
+        } else {
+            watchedMassWithdrawal.push(currentChosenMovie); 
         }
-        watchedMassWithdrawal.push(currentChosenMovie);
         localStorage.setItem('Watched', JSON.stringify(watchedMassWithdrawal));
     });
 };
@@ -25,11 +25,13 @@ queueWatched.onclick = function() {
     getMovie().then(function(value) {
         queueMassWithdrawal = JSON.parse(localStorage.getItem('Queue')) || [];
         addCurrentMovie(value);
-        if (checkMovieInLocalStorage(queueMassWithdrawal).length >= 1) {
-            return;
-        }
-        queueMass.push(currentChosenMovie);
-        localStorage.setItem('Queue', JSON.stringify(queueMass));
+        let index = checkMovieInLocalStorage(queueMassWithdrawal);
+        if (index !== -1) {
+            queueMassWithdrawal.splice(index, 1);
+        } else {
+            queueMassWithdrawal.push(currentChosenMovie);
+         }
+        localStorage.setItem('Queue', JSON.stringify(queueMassWithdrawal));
     });
 };
 
@@ -43,6 +45,6 @@ function addCurrentMovie(value) {
 }
 
 function checkMovieInLocalStorage(array) {
-    const duplicateMovie = array.filter(movie => movie.id === currentChosenMovie.id);
+    const duplicateMovie = array.findIndex(movie => movie.id === currentChosenMovie.id);
     return duplicateMovie;
 }
