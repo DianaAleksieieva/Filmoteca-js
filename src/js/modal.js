@@ -48,9 +48,10 @@ function modalOpen(event) {
         movieContent.mainGenre = movieContent.genres[0].name;
         refsModal.modalContainer.insertAdjacentHTML('afterbegin', modalTpl(movieContent));
         console.log(movieContent.mainGenre);
+        refsModal.modal.classList.toggle('is-hidden');
     });
 
-    refsModal.modal.classList.toggle('is-hidden');
+    
     document.querySelector('body').classList.add('scroll-blocked');
     window.addEventListener('keydown', onEscKeydown);
 }
@@ -59,8 +60,11 @@ function modalOpen(event) {
 function modalClose() {
     window.removeEventListener('keydown', onEscKeydown);
     refsModal.modal.classList.toggle('is-hidden');
-    refsModal.modalContainer.innerHTML = '';
     document.querySelector('body').classList.remove('scroll-blocked');
+    setTimeout(() => {
+       refsModal.modalContainer.innerHTML = ''; 
+    }, 300);
+    
 }
 
 function onEscKeydown(event) {
