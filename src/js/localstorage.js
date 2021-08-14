@@ -7,10 +7,9 @@ let watchedMass = [];
 let queueMass = [];
 const currentChosenMovie = {};
 
-alreadyWatched.onclick = function () {
-    getMovie().then(function (value) {
+alreadyWatched.onclick = function() {
+    getMovie().then(function(value) {
         addCurrentMovie(value);
-        localStorage.setItem('Watched', JSON.stringify(value));
         watchedMass.push(currentChosenMovie);
         localStorage.setItem('Watched', JSON.stringify(watchedMass));
     });
@@ -18,8 +17,8 @@ alreadyWatched.onclick = function () {
 
 queueWatched.onclick = function() {
     getMovie().then(function(value) {
-        localStorage.setItem('Queue', JSON.stringify(value));
-        queueMass.push(value);
+        addCurrentMovie(value);
+        queueMass.push(currentChosenMovie);
         localStorage.setItem('Queue', JSON.stringify(queueMass));
     });
 };
