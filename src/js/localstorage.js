@@ -3,25 +3,31 @@ import { queueWatched } from './constants';
 
 import { getMovie } from './modal';
 
-let watchedMass;
+let watchedMassWithdrawal;
+let queueMassWithdrawal;
+
 let queueMass = [];
 const currentChosenMovie = {};
 
 alreadyWatched.onclick = function() {
-    getMovie().then(function (value) {
-        watchedMass = JSON.parse(localStorage.getItem('Watched')) || [];
+    getMovie().then(function(value) {
+        watchedMassWithdrawal = JSON.parse(localStorage.getItem('Watched')) || [];
         addCurrentMovie(value);
-        if (checkMovieInLocalStorage(watchedMass).length >= 1) {
-            return
-        };
-        watchedMass.push(currentChosenMovie);
-        localStorage.setItem('Watched', JSON.stringify(watchedMass));
+        if (checkMovieInLocalStorage(watchedMassWithdrawal).length >= 1) {
+            return;
+        }
+        watchedMassWithdrawal.push(currentChosenMovie);
+        localStorage.setItem('Watched', JSON.stringify(watchedMassWithdrawal));
     });
 };
 
 queueWatched.onclick = function() {
     getMovie().then(function(value) {
+        queueMassWithdrawal = JSON.parse(localStorage.getItem('Queue')) || [];
         addCurrentMovie(value);
+        if (checkMovieInLocalStorage(queueMassWithdrawal).length >= 1) {
+            return;
+        }
         queueMass.push(currentChosenMovie);
         localStorage.setItem('Queue', JSON.stringify(queueMass));
     });
