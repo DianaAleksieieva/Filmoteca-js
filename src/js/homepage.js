@@ -21,6 +21,9 @@ import { clearSpiner, showSpinner } from './spinner';
 let inputValue = '';
 let currentContent = [];
 let page = 1;
+
+localStorage.setItem('CurrentGalleryPage', 'Home');
+
 pagination.on('afterMove', event => {
   const page = event.page;
   if (!inputValue) {

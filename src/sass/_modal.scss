@@ -120,22 +120,23 @@
   justify-content: space-between;
 }
 .modal-button {
+  background-color: var(--white-color);
+  color: var(--black-color);
   text-transform: uppercase;
-  width: 112px;
   border-radius: 5px;
-  border: none;
-  background-color: orange;
-
-  font-family: Roboto;
-  font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 16px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding: 12px 10px 12px 10px;
+  border-width: 1px;
+  border-color: var(--black-color);
+  &:hover {
+    color: var(--white-color);
+    border: none;
+    background-color: var(--second-color);
+  }
 }
 
 .scroll-blocked {
   height: 100vh;
-  overflow: hidden;
+  overflow-y: hidden;
 }
