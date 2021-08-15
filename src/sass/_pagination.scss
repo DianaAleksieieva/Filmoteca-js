@@ -1,5 +1,5 @@
 .tui-pagination {
-  margin-top: 50px;
+  margin-bottom: 50px;
   text-align: center;
   font-style: normal;
   line-height: 1.33;
@@ -7,7 +7,7 @@
   font-weight: 500;
   color: var(--black-color);
   @media screen and (max-width: 320px) {
-    margin-top: 40px;
+    margin-bottom: 10px;
   }
 }
 .tui-pagination * {
@@ -56,26 +56,29 @@
 
 .tui-pagination .tui-ico-first {
   width: 16px;
-  height: 16px;
-  background: url('../images/arrow-left.svg');
+  height: 20px;
+  font-size: 18px;
+  transform: rotate(180deg);
 }
 
 .tui-pagination .tui-ico-prev {
   width: 16px;
   height: 16px;
   background: url('../images/arrow-left.svg');
+  font-size: 0px;
 }
 
 .tui-pagination .tui-ico-next {
   width: 16px;
   height: 16px;
   background: url('../images/arrow-right.svg');
+  font-size: 0px;
 }
 
 .tui-pagination .tui-ico-last {
   width: 16px;
-  height: 16px;
-  background: url('../images/arrow-right.svg');
+  font-size: 18px;
+  transform: translate(0px, -4px);
 }
 
 .tui-pagination .tui-ico-ellip {
@@ -95,7 +98,6 @@
 .tui-pagination .tui-is-disabled .tui-ico-prev {
   display: none;
 }
-
 .tui-page-inputs {
   display: inline-flex;
   vertical-align: top;
@@ -118,4 +120,12 @@
   display: inline-flex;
   padding: 8px 0 6px;
   vertical-align: top;
+}
+.tui-pagination .tui-first,
+.tui-pagination .tui-prev-is-ellip,
+.tui-pagination .tui-next-is-ellip,
+.tui-pagination .tui-last {
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
 }

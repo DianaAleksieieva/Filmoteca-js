@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import { paginationContainer } from './constants';
 const optionsPagination = {
+  totalItems: 1,
   itemsPerPage: 1,
   visiblePages: 5,
   centerAlign: true,
@@ -8,7 +9,7 @@ const optionsPagination = {
   template: {
     moveButton:
       '<a href="#" class="tui-page-btn tui-{{type}} custom-class-{{type}}">' +
-      '<span class="tui-ico-{{type}}"></span>' +
+      '<span class="tui-ico-{{type}}">>></span>' +
       '</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' +
