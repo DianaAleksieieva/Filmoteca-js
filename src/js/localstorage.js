@@ -78,6 +78,7 @@ function watchedLibrary() {
 }
 
 function openWatchedGallery() {
+    
     watchedLibrary();
 }
 
