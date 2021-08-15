@@ -26,8 +26,10 @@ alreadyWatched.onclick = function() {
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(watchedArr);
         if (index !== -1) {
+            alreadyWatched.textContent = 'Add to watched';
             watchedArr.splice(index, 1);
         } else {
+            alreadyWatched.textContent = 'Remove from watched';
             watchedArr.push(currentChosenMovie);
         }
         localStorage.setItem('Watched', JSON.stringify(watchedArr));
@@ -42,8 +44,10 @@ queueWatched.onclick = function() {
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(queueArr);
         if (index !== -1) {
+            queueWatched.textContent = 'Add to queue';
             queueArr.splice(index, 1);
         } else {
+            queueWatched.textContent = 'Remove from queue';
             queueArr.push(currentChosenMovie);
         }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
