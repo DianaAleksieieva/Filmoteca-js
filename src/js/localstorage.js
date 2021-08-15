@@ -2,6 +2,7 @@ import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMov
 import genres from '../genres-list.json';
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
+
 import {
     alreadyWatched,
     galleryContainer,
