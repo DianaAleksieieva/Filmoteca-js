@@ -119,12 +119,24 @@
     margin-right: 39px;
   }
 }
+.navigation__item--current {
+  &::before {
+    margin-top: 18px;
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: var(--second-color);
+    display: inline-block;
+  }
+}
 
 .navigation__link {
   color: var(--white-color);
   font-size: 12px;
   margin-right: 0;
   cursor: pointer;
+  border: 0;
 }
 
 .search-form {
@@ -175,6 +187,7 @@
 }
 
 .watched-queue__button {
+  border: none;
   color: var(--white-color);
   font-size: 12px;
   margin-right: 0;
