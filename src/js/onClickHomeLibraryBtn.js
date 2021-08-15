@@ -17,8 +17,6 @@ const onClickLibraryBtn = () => {
     
     // galleryContainer.style.display = 'none';
     clearGalleryMarkup();
-
-
 };
 const onClickHomeBtn = () => {
     headerNavigationItemHome.classList.add('navigation__item--current');
