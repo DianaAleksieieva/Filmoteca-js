@@ -3,6 +3,7 @@ import { BASE_URL } from './constants';
 import { API_KEY } from './constants';
 import axios from 'axios';
 import modalTpl from '../templates/modalMovieCardTpl.hbs';
+import {alreadyWatched, queueWatched} from './constants';
 
 let movieCards;
 let movieID;
@@ -38,19 +39,21 @@ const callback = function(mutationsList) {
 const observer = new MutationObserver(callback);
 observer.observe(target, config);
 
+
 function modalOpen(event) {
     event.preventDefault();
     movieID = event.currentTarget.dataset.id;
+    const watchedLocalStorage = JSON.parse(localStorage.getItem('Watched'));
+    const queueLocalStorage = JSON.parse(localStorage.getItem('Queue'));
 
     getMovie().then(movieData => {
         movieContent = movieData;
         movieContent.mainGenre = movieContent.genres[0].name;
         refsModal.modalContainer.insertAdjacentHTML('afterbegin', modalTpl(movieContent));
-        console.log(movieContent.mainGenre);
         refsModal.modal.classList.toggle('is-hidden');
     });
 
-    
+    findDuplicates(watchedLocalStorage, queueLocalStorage);
     document.querySelector('body').classList.add('scroll-blocked');
     window.addEventListener('keydown', onEscKeydown);
 }
@@ -78,4 +81,21 @@ export const getMovie = async() => {
     } catch (error) {
         console.log(error.message);
     }
-};
+}
+
+export function findDuplicates(watched, queue) {
+    const duplicatesWatched = watched.findIndex(movie => movie.id == movieID);
+    const duplicatesQueue = queue.findIndex(movie => movie.id == movieID);
+    
+    if (duplicatesWatched != -1) {
+        alreadyWatched.textContent = 'Remove from watched'; 
+    } else {
+        alreadyWatched.textContent = 'Add to watched';
+    }
+
+    if (duplicatesQueue != -1) {
+        queueWatched.textContent = 'Remove from queue';
+    } else {
+        queueWatched.textContent = 'Add to queue';
+    }
+}

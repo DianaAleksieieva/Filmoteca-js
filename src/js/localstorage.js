@@ -1,5 +1,4 @@
 import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMoviesArray';
-import genres from '../genres-list.json';
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
 import { alreadyWatched, galleryContainer, queueWatched, watched, queue , myLibraryBtn } from './constants';
@@ -19,8 +18,10 @@ alreadyWatched.onclick = function() {
         let index = checkMovieInLocalStorage(watchedArr);
         if (index !== -1) {
             watchedArr.splice(index, 1);
+            alreadyWatched.textContent = 'Add to watched';
         } else {
-            watchedArr.push(currentChosenMovie); 
+            watchedArr.push(currentChosenMovie);
+            alreadyWatched.textContent = 'Remove from watched';
         }
         localStorage.setItem('Watched', JSON.stringify(watchedArr));
         markupRefresh('Watched');
@@ -35,8 +36,10 @@ queueWatched.onclick = function() {
         let index = checkMovieInLocalStorage(queueArr);
         if (index !== -1) {
             queueArr.splice(index, 1);
+            queueWatched.textContent = 'Add to queue';
         } else {
             queueArr.push(currentChosenMovie);
+            queueWatched.textContent = 'Remove from queue';
          }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
         markupRefresh('Queue');
@@ -91,3 +94,4 @@ function markupRefresh(page) {
         renderGalleryCards(currentContent);
         } 
 }
+
