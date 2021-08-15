@@ -25,7 +25,9 @@ const onClickHomeBtn = () => {
     headerNavigationItemLibrary.classList.remove('navigation__item--current');
     headerHome.classList.replace('header-library', 'header-home');
     WatchedQueueContainer.style.display = 'none';
-    SearchForm.style.display = 'block';
+    SearchForm.style.display = 'inline-block';
+    showSpinner();
+    clearSpiner();
     //
     galleryContainer.style.display = 'block';
 
