@@ -1,7 +1,16 @@
 import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMoviesArray';
+import genres from '../genres-list.json';
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
-import { alreadyWatched, galleryContainer, queueWatched, watched, queue , myLibraryBtn } from './constants';
+
+import {
+    alreadyWatched,
+    galleryContainer,
+    queueWatched,
+    watched,
+    queue,
+    myLibraryBtn,
+} from './constants';
 import { getMovie } from './modal';
 
 let watchedArr;
@@ -11,17 +20,15 @@ let currentContent;
 let currentPage;
 
 alreadyWatched.onclick = function() {
-    getMovie().then(function (value) {
+    getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
         watchedArr = JSON.parse(localStorage.getItem('Watched')) || [];
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(watchedArr);
         if (index !== -1) {
             watchedArr.splice(index, 1);
-            alreadyWatched.textContent = 'Add to watched';
         } else {
             watchedArr.push(currentChosenMovie);
-            alreadyWatched.textContent = 'Remove from watched';
         }
         localStorage.setItem('Watched', JSON.stringify(watchedArr));
         markupRefresh('Watched');
@@ -29,18 +36,16 @@ alreadyWatched.onclick = function() {
 };
 
 queueWatched.onclick = function() {
-    getMovie().then(function (value) {
+    getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
         queueArr = JSON.parse(localStorage.getItem('Queue')) || [];
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(queueArr);
         if (index !== -1) {
             queueArr.splice(index, 1);
-            queueWatched.textContent = 'Add to queue';
         } else {
             queueArr.push(currentChosenMovie);
-            queueWatched.textContent = 'Remove from queue';
-         }
+        }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
         markupRefresh('Queue');
     });
@@ -61,19 +66,24 @@ function checkMovieInLocalStorage(array) {
     return duplicateMovie;
 }
 
-
-
-
 watched.addEventListener('click', openWatchedGallery);
 queue.addEventListener('click', openQueueGallery);
 
-function openWatchedGallery() {
+function watchedLibrary() {
     localStorage.setItem('CurrentGalleryPage', 'Watched');
     clearGalleryMarkup();
     currentContent = JSON.parse(localStorage.getItem('Watched')) || [];
     changeDate(currentContent);
     renderGalleryCards(currentContent);
 }
+
+function openWatchedGallery() {
+    watchedLibrary();
+}
+
+myLibraryBtn.onclick = function() {
+    watchedLibrary();
+};
 
 function openQueueGallery() {
     localStorage.setItem('CurrentGalleryPage', 'Queue');
@@ -88,10 +98,9 @@ function renderGalleryCards(content) {
 }
 
 function markupRefresh(page) {
-        currentContent = JSON.parse(localStorage.getItem(page));
-        if (currentPage === page) {
+    currentContent = JSON.parse(localStorage.getItem(page));
+    if (currentPage === page) {
         clearGalleryMarkup();
         renderGalleryCards(currentContent);
-        } 
+    }
 }
-
