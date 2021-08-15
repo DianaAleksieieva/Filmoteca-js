@@ -10,8 +10,6 @@ const onClickLibraryBtn = () => {
     SearchForm.style.display = 'none';
     // galleryContainer.style.display = 'none';
     clearGalleryMarkup();
-
-
 };
 const onClickHomeBtn = () => {
     headerHome.classList.replace('header-library', 'header-home');
