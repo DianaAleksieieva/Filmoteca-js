@@ -5,12 +5,10 @@ const optionsPagination = {
   visiblePages: 5,
   centerAlign: true,
   page: 1,
-  emplate: {
-    page: '<a href="#" class="tui-page-btn">{{page}}p</a>',
-    currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}p</strong>',
+  template: {
     moveButton:
       '<a href="#" class="tui-page-btn tui-{{type}} custom-class-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
+      '<span class="tui-ico-{{type}}"></span>' +
       '</a>',
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' +
