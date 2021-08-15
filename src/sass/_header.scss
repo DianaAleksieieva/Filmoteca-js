@@ -119,6 +119,17 @@
     margin-right: 39px;
   }
 }
+.navigation__item--current {
+  &::before {
+    margin-top: 18px;
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: var(--second-color);
+    display: inline-block;
+  }
+}
 
 .navigation__link {
   color: var(--white-color);
