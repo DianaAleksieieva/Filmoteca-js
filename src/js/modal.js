@@ -1,9 +1,6 @@
-import { refsModal } from './constants';
-import { BASE_URL } from './constants';
-import { API_KEY } from './constants';
+import { apiVariables,refsModal, mainEl } from './constants';
 import axios from 'axios';
 import modalTpl from '../templates/modalMovieCardTpl.hbs';
-import {alreadyWatched, queueWatched} from './constants';
 
 let movieCards;
 let movieID;
@@ -76,7 +73,7 @@ function onEscKeydown(event) {
 
 export const getMovie = async() => {
     try {
-        const response = await axios.get(`${BASE_URL}movie/${movieID}?${API_KEY}&language=en-US`);
+        const response = await axios.get(`${apiVariables.BASE_URL}movie/${movieID}?${apiVariables.API_KEY}&language=en-US`);
         return response.data;
     } catch (error) {
         console.log(error.message);
@@ -88,14 +85,14 @@ export function findDuplicates(watched, queue) {
     const duplicatesQueue = queue.findIndex(movie => movie.id == movieID);
     
     if (duplicatesWatched != -1) {
-        alreadyWatched.textContent = 'Remove from watched'; 
+        mainEl.alreadyWatched.textContent = 'Remove from watched'; 
     } else {
-        alreadyWatched.textContent = 'Add to watched';
+        mainEl.alreadyWatched.textContent = 'Add to watched';
     }
 
     if (duplicatesQueue != -1) {
-        queueWatched.textContent = 'Remove from queue';
+        mainEl.queueWatched.textContent = 'Remove from queue';
     } else {
-        queueWatched.textContent = 'Add to queue';
+        mainEl.queueWatched.textContent = 'Add to queue';
     }
 }

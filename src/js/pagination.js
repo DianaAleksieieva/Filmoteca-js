@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import { paginationContainer } from './constants';
+import { mainEl } from './constants';
 const optionsPagination = {
   itemsPerPage: 1,
   visiblePages: 5,
@@ -31,4 +31,4 @@ const paginationAdaptive = () => {
     return optionsPagination;
   }
 };
-export const pagination = new Pagination(paginationContainer, paginationAdaptive());
+export const pagination = new Pagination(mainEl.paginationContainer, paginationAdaptive());

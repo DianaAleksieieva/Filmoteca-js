@@ -1,5 +1,5 @@
-import { galleryContainer } from './constants';
+import { mainEl } from './constants';
 
 export function clearGalleryMarkup() {
-  galleryContainer.innerHTML = '';
+  mainEl.galleryContainer.innerHTML = '';
 }
