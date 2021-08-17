@@ -32,3 +32,11 @@ const paginationAdaptive = () => {
   }
 };
 export const pagination = new Pagination(mainEl.paginationContainer, paginationAdaptive());
+export const hidePagination = () => {
+  mainEl.paginationContainer.style.display = 'none';
+
+};
+export const showPagination = () => {
+  mainEl.paginationContainer.style.display = 'block';
+
+};
