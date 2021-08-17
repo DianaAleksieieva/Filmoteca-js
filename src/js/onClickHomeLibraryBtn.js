@@ -25,7 +25,7 @@ const onClickHomeBtn = () => {
     showSpinner();
     clearSpiner();
     showPagination();
-    mainEl.galleryContainer.style.display = 'block';
+    mainEl.galleryContainer.style.display = 'flex';
 
     localStorage.setItem('CurrentGalleryPage', 'Home');
 };
