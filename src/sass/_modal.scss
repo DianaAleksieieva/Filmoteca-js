@@ -64,6 +64,10 @@
   line-height: 23px;
   margin-top: 30px;
   color: #000000;
+
+  @media screen and (min-width: 767px) {
+    margin-top: 0;
+  }
 }
 
 .modal-parameters {
@@ -72,6 +76,7 @@
 .modal-parameters-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 .modal-parameter-title {
   font-family: Roboto;
@@ -82,10 +87,10 @@
   color: #8c8c8c;
 }
 .modal-parameter {
-  //   display: flex;
-  //   justify-content: space-evenly;
   margin-top: 10px;
   left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 .modal-parameter-value {
   font-family: Roboto;
@@ -148,4 +153,8 @@
 .scroll-blocked {
   height: 100vh;
   overflow-y: hidden;
+}
+
+.close-btn-icon {
+  fill: #000000;
 }
