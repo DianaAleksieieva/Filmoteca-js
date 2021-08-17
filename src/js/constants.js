@@ -15,19 +15,22 @@ export const homeBtn = document.querySelector('#home');
 export const SearchForm = document.querySelector('#search-form');
 export const WatchedQueueContainer = document.querySelector('#watched-queue-container');
 export const headerHome = document.querySelector('header');
+export const headerNavigationItemHome = document.querySelector('.navigation__item--home');
+export const headerNavigationItemLibrary = document.querySelector('.navigation__item--library');
 export const notificationMessage = document.querySelector('#message');
+export const spiner = document.querySelector('#spiner');
 
 export const refsModal = {
     openModal: document.querySelector('.gallery'),
     closeModalBtn: document.querySelector('.modal-closeButton'),
-  modal: document.querySelector('.modal-backdrop'),
-    modalContainer: document.querySelector('.modal-container')
-  };
-
+    modal: document.querySelector('.modal-backdrop'),
+    modalContainer: document.querySelector('.modal-container'),
+};
 
 export const alreadyWatched = document.querySelector('#alreadyWatched');
 export const queueWatched = document.querySelector('#queueWatched');
 
-
 export const watched = document.querySelector('#watched-btn');
 export const queue = document.querySelector('#queue-btn');
+
+export const DEBOUNCE_DELAY = 500;

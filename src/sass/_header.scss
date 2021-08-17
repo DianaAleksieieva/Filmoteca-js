@@ -8,13 +8,61 @@
   background-color: var(--black-color);
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 65px;
   &.header-home {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url('../images/home-background-img.jpg');
+      url('../images/home1xdesk.jpg');
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/home2xdesk.jpg');
+    }
+
+    @media screen and (max-width: 768px) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/home1xtab.jpg');
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+          url('../images/home2xtab.jpg');
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/home1xmob.jpg');
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+          url('../images/home2xmob.jpg');
+      }
+    }
   }
   &.header-library {
+    // background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    //   url('../images/watched1xdesk.jpg');
+
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url('../images/library-background-img.jpg');
+      url('../images/watched1xdesk.jpg');
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/watched2xdesk.jpg');
+    }
+
+    @media screen and (max-width: 768px) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/watched1xtab.jpg');
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+          url('../images/watched2xtab.jpg');
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+        url('../images/watched1xmob.jpg');
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+          url('../images/watched2xmob.jpg');
+      }
+    }
   }
 }
 
@@ -71,12 +119,24 @@
     margin-right: 39px;
   }
 }
+.navigation__item--current {
+  &::before {
+    margin-top: 18px;
+    content: '';
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    background: var(--second-color);
+    display: inline-block;
+  }
+}
 
 .navigation__link {
   color: var(--white-color);
   font-size: 12px;
   margin-right: 0;
   cursor: pointer;
+  border: 0;
 }
 
 .search-form {
@@ -127,6 +187,7 @@
 }
 
 .watched-queue__button {
+  border: none;
   color: var(--white-color);
   font-size: 12px;
   margin-right: 0;
@@ -134,22 +195,13 @@
   width: 136px;
   height: 44px;
   border-radius: 5px;
-  margin-top: 50px;
-}
 
-.watched-queue__button:hover {
-  background-color: var(--second-color);
-  filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
-  cursor: pointer;
-  //
-  color: var(--white-color);
-  font-size: 12px;
-  margin-right: 0;
-  border: solid var(--white-color) 1px;
-  width: 136px;
-  height: 44px;
-  border-radius: 5px;
-  margin-top: 50px;
+  &:hover {
+    background-color: var(--second-color);
+    filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
+    cursor: pointer;
+    border: solid var(--white-color) 1px;
+  }
 }
 
 #watched-btn {
