@@ -3,13 +3,7 @@ import genres from '../genres-list.json';
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
 
-import {
-    alreadyWatched,
-    galleryContainer,
-    queueWatched,
-    watched,
-    queue,
-    myLibraryBtn,
+import {mainEl,
 } from './constants';
 import { getMovie } from './modal';
 
@@ -19,15 +13,17 @@ const currentChosenMovie = {};
 let currentContent;
 let currentPage;
 
-alreadyWatched.onclick = function() {
+mainEl.alreadyWatched.onclick = function() {
     getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
         watchedArr = JSON.parse(localStorage.getItem('Watched')) || [];
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(watchedArr);
         if (index !== -1) {
+            mainEl.alreadyWatched.textContent = 'Add to watched';
             watchedArr.splice(index, 1);
         } else {
+            mainEl.alreadyWatched.textContent = 'Remove from watched';
             watchedArr.push(currentChosenMovie);
         }
         localStorage.setItem('Watched', JSON.stringify(watchedArr));
@@ -35,15 +31,17 @@ alreadyWatched.onclick = function() {
     });
 };
 
-queueWatched.onclick = function() {
+mainEl.queueWatched.onclick = function() {
     getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
         queueArr = JSON.parse(localStorage.getItem('Queue')) || [];
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(queueArr);
         if (index !== -1) {
+            mainEl.queueWatched.textContent = 'Add to queue';
             queueArr.splice(index, 1);
         } else {
+            mainEl.queueWatched.textContent = 'Remove from queue';
             queueArr.push(currentChosenMovie);
         }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
@@ -55,7 +53,7 @@ function addCurrentMovie(value) {
     currentChosenMovie.id = value.id;
     currentChosenMovie.backdrop_path = value.backdrop_path;
     currentChosenMovie.poster_path = value.poster_path;
-    currentChosenMovie.title = value.title;
+    currentChosenMovie.original_title = value.original_title;
     currentChosenMovie.release_date = value.release_date;
     currentChosenMovie.genres = value.genres;
     currentChosenMovie.vote_average = value.vote_average;
@@ -66,8 +64,8 @@ function checkMovieInLocalStorage(array) {
     return duplicateMovie;
 }
 
-watched.addEventListener('click', openWatchedGallery);
-queue.addEventListener('click', openQueueGallery);
+mainEl.watched.addEventListener('click', openWatchedGallery);
+mainEl.queue.addEventListener('click', openQueueGallery);
 
 function watchedLibrary() {
     localStorage.setItem('CurrentGalleryPage', 'Watched');
@@ -82,7 +80,7 @@ function openWatchedGallery() {
     watchedLibrary();
 }
 
-myLibraryBtn.onclick = function() {
+mainEl.myLibraryBtn.onclick = function() {
     watchedLibrary();
 };
 
@@ -95,7 +93,7 @@ function openQueueGallery() {
 }
 
 function renderGalleryCards(content) {
-    galleryContainer.insertAdjacentHTML('beforeend', moviesTpl(content));
+    mainEl.galleryContainer.insertAdjacentHTML('beforeend', moviesTpl(content));
 }
 
 function markupRefresh(page) {

@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import { paginationContainer } from './constants';
+import { mainEl } from './constants';
 const optionsPagination = {
   totalItems: 1,
   itemsPerPage: 1,
@@ -30,4 +30,12 @@ const paginationAdaptive = () => {
     return optionsPagination;
   }
 };
-export const pagination = new Pagination(paginationContainer, paginationAdaptive());
+export const pagination = new Pagination(mainEl.paginationContainer, paginationAdaptive());
+export const hidePagination = () => {
+  mainEl.paginationContainer.style.display = 'none';
+
+};
+export const showPagination = () => {
+  mainEl.paginationContainer.style.display = 'block';
+
+};

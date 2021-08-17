@@ -1,33 +1,28 @@
-import { SearchForm } from './constants';
-import { WatchedQueueContainer } from './constants';
-import { headerHome,headerNavigationItemHome, headerNavigationItemLibrary } from './constants';
-import { galleryContainer } from './constants';
+import { headerEl, mainEl } from './constants';
 import { clearGalleryMarkup } from './utils';
 import { clearSpiner, showSpinner } from './spinner';
+import { hidePagination, showPagination } from './pagination';
 
 const onClickLibraryBtn = () => {
     console.log('qqqqqq');
-    headerHome.classList.replace('header-home', 'header-library');
-    WatchedQueueContainer.style.display = 'block';
-    SearchForm.style.display = 'none';
-    headerNavigationItemHome.classList.remove('navigation__item--current');
-    headerNavigationItemLibrary.classList.add('navigation__item--current');
-    showSpinner();
+    headerEl.headerHome.classList.replace('header-home', 'header-library');
+    mainEl.WatchedQueueContainer.style.display = 'block';
+    headerEl.SearchForm.style.display = 'none';
+    headerEl.headerNavigationItemHome.classList.remove('navigation__item--current');
+    headerEl.headerNavigationItemLibrary.classList.add('navigation__item--current');
     clearSpiner();
-    
-    // galleryContainer.style.display = 'none';
+    hidePagination();
     clearGalleryMarkup();
 };
 const onClickHomeBtn = () => {
-    headerNavigationItemHome.classList.add('navigation__item--current');
-    headerNavigationItemLibrary.classList.remove('navigation__item--current');
-    headerHome.classList.replace('header-library', 'header-home');
-    WatchedQueueContainer.style.display = 'none';
-    SearchForm.style.display = 'inline-block';
-    showSpinner();
+    headerEl.headerNavigationItemHome.classList.add('navigation__item--current');
+    headerEl.headerNavigationItemLibrary.classList.remove('navigation__item--current');
+    headerEl.headerHome.classList.replace('header-library', 'header-home');
+    mainEl.WatchedQueueContainer.style.display = 'none';
+    headerEl.SearchForm.style.display = 'inline-block';
     clearSpiner();
-    //
-    galleryContainer.style.display = 'block';
+    showPagination();
+    mainEl.galleryContainer.style.display = 'flex';
 
     localStorage.setItem('CurrentGalleryPage', 'Home');
 };

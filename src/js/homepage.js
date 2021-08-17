@@ -1,11 +1,8 @@
 import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMoviesArray';
 import {
-  galleryContainer,
-  homeBtn,
-  inputElement,
-  MODE,
-  myLibraryBtn,
-  searchButtonElement,
+  headerEl,
+  mainEl,
+  apiVariables,
   DEBOUNCE_DELAY,
 } from './constants';
 import photoCardsTemplates from '../templates/photoCards.hbs';
@@ -27,7 +24,7 @@ localStorage.setItem('CurrentGalleryPage', 'Home');
 pagination.on('afterMove', event => {
   const page = event.page;
   if (!inputValue) {
-    getMovies(MODE.popular, inputValue, page).then(response => {
+    getMovies(apiVariables.popular, inputValue, page).then(response => {
       currentContent = response.data.results;
 
       changeDate(currentContent);
@@ -38,7 +35,7 @@ pagination.on('afterMove', event => {
       smoothScroll();
     });
   } else {
-    getMovies(MODE.search, inputValue, page).then(response => {
+    getMovies(apiVariables.search, inputValue, page).then(response => {
       currentContent = response.data.results;
 
       changeDate(currentContent);
@@ -50,7 +47,7 @@ pagination.on('afterMove', event => {
     });
   }
 });
-getMoviesArray(MODE.popular, inputValue, page).then(data => {
+getMoviesArray(apiVariables.popular, inputValue, page).then(data => {
   currentContent = data;
   renderCardfilm(currentContent);
 });
@@ -59,7 +56,7 @@ const searchMoviesCallback = () => {
     return;
   }
 
-  getMoviesArray(MODE.search, inputValue, page).then(data => {
+  getMoviesArray(apiVariables.search, inputValue, page).then(data => {
     if (data.length > 0) {
       currentContent = data;
       clearGalleryMarkup();
@@ -74,21 +71,21 @@ const searchMoviesCallback = () => {
 };
 
 const inputCallback = () => {
-  inputValue = inputElement.value.trim().replace(' ', '%20');
+  inputValue = headerEl.inputElement.value.trim().replace(' ', '%20');
   searchMoviesCallback();
 };
 
-inputElement.addEventListener('input', debounce(inputCallback, DEBOUNCE_DELAY));
-searchButtonElement.addEventListener('click', searchMoviesCallback);
+headerEl.inputElement.addEventListener('input', debounce(inputCallback, DEBOUNCE_DELAY));
+headerEl.searchButtonElement.addEventListener('click', searchMoviesCallback);
 //
-myLibraryBtn.addEventListener('click', onClickLibraryBtn);
-homeBtn.addEventListener('click', onClickHomeBtn);
+mainEl.myLibraryBtn.addEventListener('click', onClickLibraryBtn);
+mainEl.homeBtn.addEventListener('click', onClickHomeBtn);
 const renderCardfilm = content => {
-  galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
+  mainEl.galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
 };
 
-searchButtonElement.addEventListener('click', () => {
-  inputValue = inputElement.value.trim();
+headerEl.searchButtonElement.addEventListener('click', () => {
+  inputValue = headerEl.inputElement.value.trim();
   if (!inputValue) {
     notificationFunc();
   } 

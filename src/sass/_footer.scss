@@ -2,6 +2,10 @@
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #f7f7f7;
+  position: fixed;
+  // transform: translateY(-100%);
+  bottom: 0%;
+  width: 100%;
 }
 
 .lisense-footer {
@@ -55,4 +59,8 @@
     justify-content: center;
     flex-direction: row;
   }
+}
+
+.container-footer {
+  padding: 0px;
 }
