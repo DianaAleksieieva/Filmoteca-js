@@ -90,12 +90,14 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   // padding-left: 71px;
   // padding-right: 71px;
   padding-top: 41px;
 }
 
 .navigation__list {
+  align-items: baseline;
   display: flex;
   padding: 0;
 }
