@@ -1,6 +1,7 @@
 import { headerEl, mainEl } from './constants';
 import { clearGalleryMarkup } from './utils';
 import { clearSpiner, showSpinner } from './spinner';
+import { hidePagination, showPagination } from './pagination';
 
 const onClickLibraryBtn = () => {
     console.log('qqqqqq');
@@ -11,7 +12,7 @@ const onClickLibraryBtn = () => {
     headerEl.headerNavigationItemLibrary.classList.add('navigation__item--current');
     showSpinner();
     clearSpiner();
-    
+    hidePagination();
     // galleryContainer.style.display = 'none';
     clearGalleryMarkup();
 };
@@ -23,7 +24,7 @@ const onClickHomeBtn = () => {
     headerEl.SearchForm.style.display = 'inline-block';
     showSpinner();
     clearSpiner();
-    //
+    showPagination();
     mainEl.galleryContainer.style.display = 'block';
 
     localStorage.setItem('CurrentGalleryPage', 'Home');
