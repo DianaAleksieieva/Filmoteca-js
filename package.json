@@ -3,14 +3,14 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://goitacademy.github.io/DianaAleksieieva",
+  "homepage": "https://DianaAleksieieva.github.io/js-team-project-group3.git",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /DianaAleksieieva/"
+    "build": "parcel build src/*.html --public-url /js-team-project-group3/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/goitacademy/js-team-project-group3.git"
+    "url": "git+https://github.com/DianaAleksieieva/js-team-project-group3.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
@@ -28,6 +28,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "handlebars": "^4.7.7",
+    "lodash.debounce": "^4.0.8",
     "tui-pagination": "^3.4.1"
   }
 }

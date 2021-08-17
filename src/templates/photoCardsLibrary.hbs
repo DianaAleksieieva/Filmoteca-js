@@ -2,12 +2,12 @@
            <div class="photo-card" data-id="{{id}}">
                 <div class="image-thumb">
                   <a class="image-link" href="https://image.tmdb.org/t/p/w500/{{backdrop_path}}">
-               <img class="image-card" src="https://image.tmdb.org/t/p/w200/{{poster_path}}" alt="{{title}}" loading="lazy" />
+               <img class="image-card" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" loading="lazy" />
                </a>
                </div>
                <div class="info">
                  <h2 class="name-film">{{original_title}}</h2>
-                 <p class="genres-year-film"><span>{{genre_ids}}</span> | {{release_date}} <span class="rating">10.0</span></p>
+                 <p class="genres-year-film"><span>{{genre_ids}}</span> | {{release_date}} <span class="rating">{{vote_average}}</span></p>
                </div>
              </div>
 {{/each}}

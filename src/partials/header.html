@@ -3,17 +3,21 @@
 
     <div class="container">
         <div class="navigation">
+           
             <a href="./index.html" class="logo__link">
+
                <!-- <img class="logo__img" src="./images/logo.png" alt="logo" />-->
                  <svg class="logo__img" width="24px" height="24px">
                 <use href="./images/symbol-defs.svg#icon-film"></use></svg> 
+
                 <p class="logo-text">Filmoteka</p>
             </a>
+            <div class="lds-spinner hidden" id="spiner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
             <ul class="navigation__list">
-                <li class="navigation__item list">
+                <li class="navigation__item list navigation__item--home navigation__item--current">
                     <button type="button" class="navigation__link" id="home">HOME</button>
                 </li>
-                <li class="navigation__item list">
+                <li class="navigation__item list navigation__item--library">
                     <button type="button" class="navigation__link" id="library">MY LIBRARY</button>
                 </li>
             </ul>
@@ -24,7 +28,7 @@
         <img class="search-img" src="../src/images/search.png" alt="" />
       </button>
         </form>
-        <div class="notification" id="message">Search result not successful. Enter the correct movie name and </div>
+        <div class="notification" id="message">Search result not successful. Enter the correct movie name and try again</div>
         <div id="watched-queue-container" style="display: none">
             <button type="button" class="watched-queue__button" id="watched-btn">WATCHED</button>
             <button type="button" class="watched-queue__button" id="queue-btn">QUEUE</button>
