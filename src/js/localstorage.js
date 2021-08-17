@@ -53,7 +53,7 @@ function addCurrentMovie(value) {
     currentChosenMovie.id = value.id;
     currentChosenMovie.backdrop_path = value.backdrop_path;
     currentChosenMovie.poster_path = value.poster_path;
-    currentChosenMovie.title = value.title;
+    currentChosenMovie.original_title = value.original_title;
     currentChosenMovie.release_date = value.release_date;
     currentChosenMovie.genres = value.genres;
     currentChosenMovie.vote_average = value.vote_average;
