@@ -227,16 +227,16 @@
 
 .mail,
 .git-mail {
-  width: 35px;
-  height: 35px;
+  width: 44px;
+  height: 44px;
   padding-left: 8px;
   border-radius: 10px;
   transition: 0.5s;
   transform: scale(1);
-  fill: rgb(236, 14, 14);
+  fill: rgb(138, 126, 126);
   &:hover,
   &:focus {
-    fill: var(--white-color);
+    fill: var(--second-color);
     // background-color:;
   }
 }
