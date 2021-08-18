@@ -79,7 +79,14 @@ headerEl.inputElement.addEventListener('input', debounce(inputCallback, DEBOUNCE
 headerEl.searchButtonElement.addEventListener('click', searchMoviesCallback);
 //
 mainEl.myLibraryBtn.addEventListener('click', onClickLibraryBtn);
-mainEl.homeBtn.addEventListener('click', onClickHomeBtn);
+mainEl.homeBtn.addEventListener('click', () => {
+  onClickHomeBtn();
+  mainEl.galleryContainer.innerHTML = "";
+  getMoviesArray(apiVariables.popular, inputValue, page).then(data => {
+    currentContent = data;
+    renderCardfilm(currentContent);
+  });
+});
 const renderCardfilm = content => {
   mainEl.galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
 };
@@ -88,7 +95,7 @@ headerEl.searchButtonElement.addEventListener('click', () => {
   inputValue = headerEl.inputElement.value.trim();
   if (!inputValue) {
     notificationFunc();
-  } 
+  }
   else {
     showSpinner ();
   }
