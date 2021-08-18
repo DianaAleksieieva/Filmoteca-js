@@ -1,6 +1,7 @@
 .is-hidden {
   opacity: 0;
   pointer-events: none;
+  transform: scale(0.9);
 }
 .modal-backdrop {
   position: fixed;
@@ -13,14 +14,13 @@
 }
 .modal-pop-up {
   position: absolute;
-  width: 280px;
-  //   max-width: 280px;
+  min-width: 280px;
+  height: calc(100% - 40px);
   background-color: white;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   padding: 48px 20px 40px 20px;
-  height: 600px;
   overflow-y: scroll;
 }
 .modal-pop-up::-webkit-scrollbar {
@@ -29,15 +29,29 @@
 }
 
 .modal-closeButton {
+  border: none;
   padding: 0;
   position: absolute;
   width: 30px;
   height: 30px;
-  border: 1px solid black;
-  background-color: white;
   top: 10px;
   right: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover .close-btn-icon {
+    stroke: var(--second-color);
+  }
+}
+
+.close-btn-icon {
+  stroke: #000000;
+  stroke-width: 2px;
+  fill: none;
+  width: 30px;
+  transition: linear 0.2s;
 }
 
 .modal-image-thumb {
@@ -64,6 +78,7 @@
   margin-top: 20px;
 }
 .modal-parameters-list {
+  margin: 0;
   list-style: none;
   padding: 0;
 }
@@ -76,10 +91,13 @@
   color: #8c8c8c;
 }
 .modal-parameter {
-  //   display: flex;
-  //   justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-top: 10px;
   left: 0;
+}
+.modal-parameter:first-child {
+  margin-top: 0;
 }
 .modal-parameter-value {
   font-family: Roboto;
@@ -87,10 +105,17 @@
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-  text-transform: uppercase;
   color: #000000;
 }
-
+.vote_average {
+  padding: 1px 10px 1px 10px;
+  border-radius: 5px;
+  background-color: var(--second-color);
+  color: white;
+}
+.modal-parameter-originalTitle {
+  text-transform: uppercase;
+}
 .modal-desctiption {
   margin-top: 20px;
 }
@@ -111,6 +136,7 @@
   line-height: 20px;
   color: #000000;
   text-align: justify;
+  margin-top: 10px;
 }
 
 .modal-button-list {
@@ -119,13 +145,17 @@
   justify-content: space-between;
 }
 .modal-button {
+  height: 44px;
+  min-width: 112px;
+  width: calc(100% / 2 - 15px);
   background-color: var(--white-color);
   color: var(--black-color);
   text-transform: uppercase;
   border-radius: 5px;
   font-weight: 500;
   font-size: 12px;
-  padding: 12px 10px 12px 10px;
+  text-align: center;
+  vertical-align: middle;
   border-width: 1px;
   border-color: var(--black-color);
   &:hover {

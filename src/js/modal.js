@@ -48,9 +48,10 @@ function modalOpen(event) {
         movieContent.mainGenre = movieContent.genres[0].name;
         refsModal.modalContainer.insertAdjacentHTML('afterbegin', modalTpl(movieContent));
         refsModal.modal.classList.toggle('is-hidden');
+        findDuplicates(watchedLocalStorage, queueLocalStorage);
     });
 
-    findDuplicates(watchedLocalStorage, queueLocalStorage);
+    
     document.querySelector('body').classList.add('scroll-blocked');
     window.addEventListener('keydown', onEscKeydown);
 }
