@@ -31,6 +31,7 @@ queue: document.querySelector('#queue-btn'),
 
 
 export const spiner = document.querySelector('#spiner');
+export const spinerBackdrop = document.querySelector('#backdrop-spiner');
 export const refsModal = {
     openModal: document.querySelector('.gallery'),
     closeModalBtn: document.querySelector('.modal-closeButton'),

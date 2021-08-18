@@ -98,11 +98,15 @@
 .lds-spinner {
   color: official;
   display: inline-block;
-  position: relative;
+
   width: 80px;
   height: 80px;
   opacity: 1;
   transition: 2s;
+  position: relative;
+
+  top: 50%;
+  left: 50%;
 }
 .lds-spinner.hidden {
   opacity: 0;
