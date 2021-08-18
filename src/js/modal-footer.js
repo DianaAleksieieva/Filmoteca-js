@@ -5,7 +5,7 @@
   const btns = {
     openModalBtn: document.querySelector("[data-modal-open]"),
     closeModalBtn: document.querySelector(".team-modal-close-button"),
-    modal: document.querySelector(".backdrop"),
+    modal: document.querySelector(".backdropp"),
   };
 
   btns.openModalBtn.addEventListener("click", openModal);
@@ -14,7 +14,7 @@
       btns.modal.classList.remove("is-hidden");
       window.addEventListener("keydown", onPressEscape);
       btns.closeModalBtn.addEventListener("click", closeModal);
-    btns.modal.addEventListener("click", backdropCloseModal);
+    btns.modal.addEventListener("click", backdroppCloseModal);
     // refs.body.classList.add('scroll-hidden');
     };
   function closeModal() {
@@ -29,7 +29,7 @@
       closeModal();
     }
   }
-  function backdropCloseModal(event) {
+  function backdroppCloseModal(event) {
     if (event.currentTarget === event.target) {
     closeModal();
   }
