@@ -48,9 +48,10 @@ function modalOpen(event) {
         movieContent.mainGenre = movieContent.genres[0].name;
         refsModal.modalContainer.insertAdjacentHTML('afterbegin', modalTpl(movieContent));
         refsModal.modal.classList.toggle('is-hidden');
+        findDuplicates(watchedLocalStorage, queueLocalStorage);
     });
 
-    findDuplicates(watchedLocalStorage, queueLocalStorage);
+    
     document.querySelector('body').classList.add('scroll-blocked');
     window.addEventListener('keydown', onEscKeydown);
 }
@@ -60,7 +61,8 @@ function modalClose() {
     refsModal.modal.classList.toggle('is-hidden');
     document.querySelector('body').classList.remove('scroll-blocked');
     setTimeout(() => {
-       refsModal.modalContainer.innerHTML = ''; 
+        document.querySelector('.modal-image-thumb').remove();
+        document.querySelector('.modal-info').remove();
     }, 300);
     
 }
