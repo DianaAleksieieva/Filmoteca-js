@@ -15,6 +15,8 @@ headerHome: document.querySelector('header'),
 headerNavigationItemHome: document.querySelector('.navigation__item--home'),
 headerNavigationItemLibrary: document.querySelector('.navigation__item--library'),
 notificationMessage: document.querySelector('#message'),
+watchedButton: document.querySelector('#watched-btn'),
+queueButton: document.querySelector('#queue-btn'),
 };
 
 export const mainEl = {

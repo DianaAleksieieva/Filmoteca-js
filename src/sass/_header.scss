@@ -207,7 +207,7 @@
   width: 136px;
   height: 44px;
   border-radius: 5px;
-
+  cursor: pointer;
   &:hover {
     background-color: var(--second-color);
     filter: drop-shadow(0px 8px 43px rgba(255, 107, 1, 0.6));
@@ -216,6 +216,10 @@
   }
   @media screen and (max-width: 425px) {
     width: 130px;
+  }
+  &--active {
+    color: var(--second-color);
+    border: solid var(--second-color) 2px;
   }
 }
 
