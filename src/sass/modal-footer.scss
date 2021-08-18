@@ -1,4 +1,6 @@
-.backdrop {
+
+.backdropp {
+
   position: fixed;
   left: 0;
   top: 0;
@@ -11,7 +13,9 @@
   transition: 1s;
   transform: opacity(1);
 }
-.backdrop.is-hidden {
+
+.backdropp.is-hidden {
+
   opacity: 0;
   visibility: hidden;
 }
@@ -188,14 +192,21 @@
     font-size: 8px;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-  .team-card-list-item {
-    margin-bottom: 30px;
-    &:nth-child(odd) {
-      margin-right: 30px;
-    }
+
+.team-card-list-item {
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  transition: 1s;
+  transform: scale(1);
+  border-radius: 25px;
+  box-shadow: 0 0 8px #ee5b06;
+  height: 100%;
+  &:nth-child(odd) {
+    margin-right: 30px;
   }
 }
+
+
 @media screen and (min-width: 1024px) {
   .team-card-list {
     flex-wrap: wrap;
@@ -233,7 +244,9 @@
   border-radius: 10px;
   transition: 0.5s;
   transform: scale(1);
-  fill: rgb(138, 126, 126);
+
+  fill: rgb(0, 0, 0);
+
   &:hover,
   &:focus {
     fill: var(--second-color);
