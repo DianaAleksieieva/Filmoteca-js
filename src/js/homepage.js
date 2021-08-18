@@ -71,7 +71,7 @@ const searchMoviesCallback = () => {
 };
 
 const inputCallback = () => {
-  inputValue = headerEl.inputElement.value.trim().replace(' ', '%20');
+  inputValue = headerEl.inputElement.value.trim();
   searchMoviesCallback();
 };
 
