@@ -103,4 +103,4 @@ var t=arguments[3],e="Expected a function",n=NaN,r="[object Symbol]",i=/^\s+|\s+
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/homepage"),require("./js/localstorage"),require("./js/modal"),require("./js/modal-footer");
 },{"./sass/main.scss":"clu1","./js/homepage":"aeqv","./js/localstorage":"MoVy","./js/modal":"RSqK","./js/modal-footer":"hhFr"}]},{},["Focm"], null)
-//# sourceMappingURL=/js-team-project-group3/src.58a0656a.js.map
+//# sourceMappingURL=/js-team-project-group3/src.1916666d.js.map
