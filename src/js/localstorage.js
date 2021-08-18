@@ -1,5 +1,4 @@
 import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMoviesArray';
-import genres from '../genres-list.json';
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
 
@@ -76,7 +75,6 @@ function watchedLibrary() {
 }
 
 function openWatchedGallery() {
-    
     watchedLibrary();
 }
 

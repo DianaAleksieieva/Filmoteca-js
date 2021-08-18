@@ -61,7 +61,8 @@ function modalClose() {
     refsModal.modal.classList.toggle('is-hidden');
     document.querySelector('body').classList.remove('scroll-blocked');
     setTimeout(() => {
-       refsModal.modalContainer.innerHTML = ''; 
+        document.querySelector('.modal-image-thumb').remove();
+        document.querySelector('.modal-info').remove();
     }, 300);
     
 }
