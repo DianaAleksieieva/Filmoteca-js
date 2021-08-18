@@ -22,7 +22,6 @@ const onClickHomeBtn = () => {
     headerEl.SearchForm.style.display = 'inline-block';
     clearSpiner();
     showPagination();
-    mainEl.galleryContainer.style.display = 'flex';
 
     localStorage.setItem('CurrentGalleryPage', 'Home');
 };
