@@ -83,18 +83,23 @@ export const getMovie = async() => {
 }
 
 export function findDuplicates(watched, queue) {
-    const duplicatesWatched = watched.findIndex(movie => movie.id == movieID);
-    const duplicatesQueue = queue.findIndex(movie => movie.id == movieID);
-    
+    if (!watched) {
+        mainEl.alreadyWatched.textContent = 'Add to watched';
+    } else {
+        const duplicatesWatched = watched.findIndex(movie => movie.id == movieID);
     if (duplicatesWatched != -1) {
         mainEl.alreadyWatched.textContent = 'Remove from watched'; 
     } else {
         mainEl.alreadyWatched.textContent = 'Add to watched';
-    }
-
-    if (duplicatesQueue != -1) {
+    }}
+    
+    if (!queue) {
+        mainEl.queueWatched.textContent = 'Add to queue';
+    } else {
+        const duplicatesQueue = queue.findIndex(movie => movie.id == movieID);
+        if (duplicatesQueue != -1) {
         mainEl.queueWatched.textContent = 'Remove from queue';
     } else {
         mainEl.queueWatched.textContent = 'Add to queue';
-    }
+    }}
 }
