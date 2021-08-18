@@ -54,8 +54,19 @@ function addCurrentMovie(value) {
     currentChosenMovie.poster_path = value.poster_path;
     currentChosenMovie.original_title = value.original_title;
     currentChosenMovie.release_date = value.release_date;
-    currentChosenMovie.genres = value.genres;
+    currentChosenMovie.genres = convertGenres();
     currentChosenMovie.vote_average = value.vote_average;
+
+    function convertGenres() { 
+        let genresList = value.genres.map(genre => genre.name);
+        if (genresList.length > 3) {
+            genresList.length = 3;
+            genresList.splice(2, 1, 'Other');
+            return genresList.join();
+        } else {
+            return genresList.join();
+        }
+    }
 }
 
 function checkMovieInLocalStorage(array) {
