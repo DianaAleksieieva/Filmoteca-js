@@ -1,0 +1,37 @@
+.scrollUp {
+	position: fixed;
+	display: inline-block;
+	bottom: 30px;
+	right: -40px;
+	width: 40px;
+	height: 25px;
+	z-index: 1000;
+	cursor: pointer;
+	text-align: center;
+	color: #fff;
+	opacity: 0;
+	visibility: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.scrollUp-icon {
+	position: relative;
+	bottom: 6px;
+	right: -1px;
+	fill: rgb(18, 196, 196);
+	transition: all .3s ease-in-out;
+
+}
+
+.scrollUp-icon:hover {
+    cursor: pointer;
+    fill: rgb(236, 91, 7);
+    transition: all .3s ease-in-out;
+}
+
+
+.scrollUp.show {
+	opacity: 1;
+	visibility: visible;
+	right: calc(2%);
+}
