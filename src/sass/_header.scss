@@ -266,6 +266,10 @@
   @media screen and (max-width: 425px) {
     width: 130px;
   }
+
+  @media screen and (max-width: 768px) {
+    width: 130px;
+  }
   &--active {
     color: var(--second-color);
     border: solid var(--second-color) 2px;
