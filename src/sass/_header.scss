@@ -8,7 +8,7 @@
   background-color: var(--black-color);
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 65px;
+  // padding-bottom: 65px;
   &.header-home {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url('../images/home1xdesk.jpg');
@@ -78,7 +78,7 @@
   display: inline-block;
   margin: 0;
   
-  @media screen and (max-width: 425px) {
+  @media screen and (max-width: 767px) {
     display: none;
   }
 }
@@ -144,7 +144,10 @@
   // padding-left: 71px;
   // padding-right: 71px;
   // padding-top: 41px;
-  padding-top: 31px;
+  padding-top: 41px;
+  @media screen and (max-width: 320px) {
+    padding-top: 46px;
+  }
 }
 
 .navigation__list {
