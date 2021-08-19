@@ -86,6 +86,7 @@ mainEl.homeBtn.addEventListener('click', () => {
     currentContent = data;
     renderCardfilm(currentContent);
   });
+  headerEl.inputElement.value = '';
 });
 const renderCardfilm = content => {
   mainEl.galleryContainer.insertAdjacentHTML('beforeend', photoCardsTemplates(content));
