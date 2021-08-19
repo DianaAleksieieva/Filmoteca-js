@@ -15,6 +15,7 @@
       window.addEventListener("keydown", onPressEscape);
       btns.closeModalBtn.addEventListener("click", closeModal);
     btns.modal.addEventListener("click", backdroppCloseModal);
+    document.querySelector('body').classList.add('scroll-blocked');
     // refs.body.classList.add('scroll-hidden');
     };
   function closeModal() {
@@ -23,6 +24,7 @@
     btns.modal.classList.add("is-hidden");
     btns.modal.removeEventListener("click", closeModal);
   window.removeEventListener('keydown', onPressEscape);
+  document.querySelector('body').classList.remove('scroll-blocked');
   }
   function onPressEscape(event) {
     if (event.code === 'Escape') {
