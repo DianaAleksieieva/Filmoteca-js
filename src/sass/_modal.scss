@@ -1,7 +1,10 @@
 .is-hidden {
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.9);
+}
+
+.is-hidden > .modal-pop-up {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 .modal-backdrop {
   position: fixed;
@@ -24,6 +27,7 @@
   transform: translate(-50%, -50%) scale(1);
   padding: 48px 20px 40px 20px;
   overflow-y: scroll;
+  transition: linear 0.3s;
 
   @media screen and (min-width: 767px) {
     max-width: none;
