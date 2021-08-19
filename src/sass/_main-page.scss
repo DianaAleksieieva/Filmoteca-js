@@ -7,6 +7,13 @@
 .photo-card {
   width: 274px;
   margin-bottom: 30px;
+  gcursor:pointer;
+	transition-duration: 0.5s;
+
+  &:hover,
+  &:focus {
+    transform:scale(1.07);
+    box-shadow: 43px 63px 17px -21px rgba(141, 75, 24, 0.79);}
 
   @media screen and (max-width: 768px) {
     width: 293px;
