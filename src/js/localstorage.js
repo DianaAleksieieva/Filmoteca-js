@@ -2,8 +2,7 @@ import { getMoviesArray, changeDate, changeGenres, updateGenres } from './getMov
 import moviesTpl from '../templates/photoCardsLibrary.hbs';
 import { clearGalleryMarkup } from './utils';
 
-import {mainEl,
-} from './constants';
+import {mainEl, headerEl} from './constants';
 import { getMovie } from './modal';
 
 let watchedArr;
@@ -30,7 +29,7 @@ mainEl.alreadyWatched.onclick = function() {
     });
 };
 
-mainEl.queueWatched.onclick = function() {
+mainEl.queueWatched.onclick = function () {
     getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
         queueArr = JSON.parse(localStorage.getItem('Queue')) || [];
@@ -45,6 +44,7 @@ mainEl.queueWatched.onclick = function() {
         }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
         markupRefresh('Queue');
+       
     });
 };
 
@@ -87,6 +87,8 @@ function watchedLibrary() {
 
 function openWatchedGallery() {
     watchedLibrary();
+    headerEl.watchedButton.classList.add('watched-queue__button--active');
+    headerEl.queueButton.classList.remove('watched-queue__button--active');
 }
 
 mainEl.myLibraryBtn.onclick = function() {
@@ -94,6 +96,8 @@ mainEl.myLibraryBtn.onclick = function() {
 };
 
 function openQueueGallery() {
+    headerEl.watchedButton.classList.remove('watched-queue__button--active');
+    headerEl.queueButton.classList.add('watched-queue__button--active');
     localStorage.setItem('CurrentGalleryPage', 'Queue');
     clearGalleryMarkup();
     currentContent = JSON.parse(localStorage.getItem('Queue')) || [];
