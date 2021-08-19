@@ -4,7 +4,6 @@ import { clearSpiner, showSpinner } from './spinner';
 import { hidePagination, showPagination } from './pagination';
 
 const onClickLibraryBtn = () => {
-    console.log('qqqqqq');
     headerEl.headerHome.classList.replace('header-home', 'header-library');
     mainEl.WatchedQueueContainer.style.display = 'block';
     headerEl.SearchForm.style.display = 'none';
