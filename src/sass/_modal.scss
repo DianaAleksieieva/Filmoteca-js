@@ -7,6 +7,7 @@
   transform: translate(-50%, -50%) scale(0.9);
 }
 .modal-backdrop {
+  z-index: 99999;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -14,6 +15,9 @@
   left: 0;
   background-color: var(--backdrop);
   transition: linear 0.3s;
+}
+.team-modal {
+  height: 200px;
 }
 .modal-pop-up {
   width: calc(100% - 40px);
