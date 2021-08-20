@@ -47,7 +47,7 @@
   &:hover,
   &:focus  {
     transform:scale(1.02);
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px,
     rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   }
 }
@@ -88,6 +88,7 @@
 }
 
 .gallery {
+  position: relative;
   margin: auto;
   padding-top: 20px;
   display: grid;
@@ -206,6 +207,27 @@
     opacity: 0;
   }
 }
+
+.empty-page-title {
+
+  @media screen and (min-width: 320px) {
+    grid-column-start: 1;
+    margin-top: 30%;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    bottom: -200%;
+    left: 25%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    position: static;
+    grid-column-start: 2;
+    margin-top: 20%;
+  }
+}
+
 
 // .photo-card {
 //   position: relative;

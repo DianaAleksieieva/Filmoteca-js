@@ -14,6 +14,7 @@ let currentPage;
 mainEl.alreadyWatched.onclick = function() {
     getMovie().then(function(value) {
         currentPage = localStorage.getItem('CurrentGalleryPage');
+        console.log(currentPage)
         watchedArr = JSON.parse(localStorage.getItem('Watched')) || [];
         addCurrentMovie(value);
         let index = checkMovieInLocalStorage(watchedArr);
@@ -44,7 +45,7 @@ mainEl.queueWatched.onclick = function () {
         }
         localStorage.setItem('Queue', JSON.stringify(queueArr));
         markupRefresh('Queue');
-       
+
     });
 };
 
@@ -57,7 +58,7 @@ function addCurrentMovie(value) {
     currentChosenMovie.genres = convertGenres();
     currentChosenMovie.vote_average = value.vote_average;
 
-    function convertGenres() { 
+    function convertGenres() {
         let genresList = value.genres.map(genre => genre.name);
         if (genresList.length > 3) {
             genresList.length = 3;
@@ -106,6 +107,9 @@ function openQueueGallery() {
 }
 
 function renderGalleryCards(content) {
+    if (content.length === 0) {
+      mainEl.galleryContainer.innerHTML = "<h1 class='empty-page-title'>No movies have been added yet...</h1>"
+    }
     mainEl.galleryContainer.insertAdjacentHTML('beforeend', moviesTpl(content));
 }
 
