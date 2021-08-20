@@ -41,3 +41,4 @@ export const refsModal = {
     modalContainer: document.querySelector('.modal-container'),
 };
 export const DEBOUNCE_DELAY = 500;
+export const btnUp = document.querySelector('.scrollUp');
