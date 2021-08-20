@@ -107,4 +107,4 @@ const e={LIGHT:"light-theme",DARK:"dark-theme"},t=document.querySelector("body")
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/homepage"),require("./js/localstorage"),require("./js/modal"),require("./js/modal-footer"),require("./js/scrollUp"),require("./js/theme-switch");
 },{"./sass/main.scss":"clu1","./js/homepage":"aeqv","./js/localstorage":"MoVy","./js/modal":"RSqK","./js/modal-footer":"hhFr","./js/scrollUp":"Bjts","./js/theme-switch":"JIhF"}]},{},["Focm"], null)
-//# sourceMappingURL=/js-team-project-group3/src.40b2b730.js.map
+//# sourceMappingURL=/js-team-project-group3/src.97243a89.js.map
