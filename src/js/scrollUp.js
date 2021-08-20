@@ -1,3 +1,7 @@
+import {
+    btnUp,
+  } from './constants';
+
 function scrollTo(to, duration = 700) {
     const
         element = document.scrollingElement || document.documentElement,
@@ -26,17 +30,27 @@ function scrollTo(to, duration = 700) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    let btn = document.querySelector('.scrollUp');
     window.addEventListener('scroll', function () {
         if (pageYOffset > 100) {
-            btn.classList.add('show');        
+            btnUpShow();       
         } else {
-            btn.classList.remove('show');
+            btnUpHide();
         }
     });
 
-    btn.onclick = function (click) {
+    btnUp.onclick = function (click) {
         click.preventDefault();
         scrollTo(0, 400);
     }
 });
+
+export const btnUpShow =() => {
+    btnUp.classList.add('show');   
+  }
+
+
+export const btnUpHide =() => {
+    btnUp.classList.remove('show');   
+  }
+  
+  

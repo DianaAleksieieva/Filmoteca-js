@@ -1,4 +1,5 @@
-
+import { btnUpHide, btnUpShow } from './scrollUp';
+import { btnUp } from './constants';
 
 (() => {
   // document.body.style.overflow = 'hidden';
@@ -16,6 +17,7 @@
       btns.closeModalBtn.addEventListener("click", closeModal);
     btns.modal.addEventListener("click", backdroppCloseModal);
     document.querySelector('body').classList.add('scroll-blocked');
+    btnUpHide();
     // refs.body.classList.add('scroll-hidden');
     };
   function closeModal() {
@@ -25,6 +27,7 @@
     btns.modal.removeEventListener("click", closeModal);
   window.removeEventListener('keydown', onPressEscape);
   document.querySelector('body').classList.remove('scroll-blocked');
+  btnUpShow();
   }
   function onPressEscape(event) {
     if (event.code === 'Escape') {
