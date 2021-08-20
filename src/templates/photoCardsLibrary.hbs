@@ -2,8 +2,12 @@
            <div class="photo-card" data-id="{{id}}">
                 <div class="image-thumb">
                   <a class="image-link" href="https://image.tmdb.org/t/p/w500/{{backdrop_path}}">
-               <img class="image-card" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" loading="lazy" />
-               </a>
+                  {{#if poster_path}}
+                  <img class="image-card" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" loading="lazy" />
+                  {{else}}
+                  <img class="image-card" src="https://i.ibb.co/jLRFqGC/empty.jpg" alt="{{title}}" loading="lazy"/>
+                  {{/if}}
+                 </a>
                </div>
                <div class="info">
                  <h2 class="name-film">{{original_title}}</h2>
