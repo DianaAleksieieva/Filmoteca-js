@@ -1,4 +1,4 @@
-import { apiVariables,refsModal, mainEl, btnUp } from './constants';
+import { apiVariables,refsModal, mainEl } from './constants';
 import axios from 'axios';
 import modalTpl from '../templates/modalMovieCardTpl.hbs';
 import { btnUpHide, btnUpShow } from './scrollUp';

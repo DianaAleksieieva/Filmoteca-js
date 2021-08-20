@@ -1,5 +1,4 @@
 import { btnUpHide, btnUpShow } from './scrollUp';
-import { btnUp } from './constants';
 
 (() => {
   // document.body.style.overflow = 'hidden';
