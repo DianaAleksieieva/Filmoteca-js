@@ -145,3 +145,11 @@
   padding: 8px 0 6px;
   vertical-align: top;
 }
+.tui-pagination .tui-last,
+.tui-pagination .tui-first,
+.tui-pagination .tui-first-child,
+.tui-pagination .tui-last-child {
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
+}
