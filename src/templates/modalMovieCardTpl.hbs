@@ -1,6 +1,12 @@
 <div class="modal-image-thumb">
-    <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"
+    {{#if poster_path}}
+         <img src="https://image.tmdb.org/t/p/w500/{{poster_path}}"
+            alt="{{title}}" width="240px" class="modal-image" />
+    {{else}}
+     <img src="https://i.ibb.co/jLRFqGC/empty.jpg"
         alt="{{title}}" width="240px" class="modal-image" />
+    {{/if}}
+
 </div>
 <div class="modal-info">
 <span class="modal-title">{{title}}</span>
