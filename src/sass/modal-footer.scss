@@ -145,7 +145,7 @@
   .team-card-list {
     display: block;
     &-item {
-      margin: 0 auto;
+      margin: 35px;
       max-width: 320px;
 
       &:not(:last-child) {
@@ -201,9 +201,9 @@
   border-radius: 25px;
   box-shadow: 0 0 8px #ee5b06;
   height: 100%;
-  &:nth-child(odd) {
-    margin-right: 30px;
-  }
+ 
+    margin-right: 20px;
+  
 }
 
 

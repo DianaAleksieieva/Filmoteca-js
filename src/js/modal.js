@@ -1,6 +1,7 @@
 import { apiVariables,refsModal, mainEl } from './constants';
 import axios from 'axios';
 import modalTpl from '../templates/modalMovieCardTpl.hbs';
+import { btnUpHide, btnUpShow } from './scrollUp';
 
 let movieCards;
 let movieID;
@@ -51,7 +52,7 @@ function modalOpen(event) {
         findDuplicates(watchedLocalStorage, queueLocalStorage);
     });
 
-    
+    btnUpHide();
     document.querySelector('body').classList.add('scroll-blocked');
     window.addEventListener('keydown', onEscKeydown);
 }
@@ -60,6 +61,8 @@ function modalClose() {
     window.removeEventListener('keydown', onEscKeydown);
     refsModal.modal.classList.toggle('is-hidden');
     document.querySelector('body').classList.remove('scroll-blocked');
+    if (pageYOffset > 100) {
+        btnUpShow()};
     setTimeout(() => {
         document.querySelector('.modal-image-thumb').remove();
         document.querySelector('.modal-info').remove();

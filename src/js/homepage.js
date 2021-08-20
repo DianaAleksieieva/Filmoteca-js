@@ -54,6 +54,8 @@ getMoviesArray(apiVariables.popular, inputValue, page).then(data => {
 const searchMoviesCallback = () => {
   if (!inputValue) {
     return;
+  } else {
+    showSpinner ();
   }
 
   getMoviesArray(apiVariables.search, inputValue, page).then(data => {
