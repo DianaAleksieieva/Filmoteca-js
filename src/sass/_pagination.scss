@@ -1,5 +1,6 @@
 .tui-pagination {
   margin-top: 50px;
+  margin-bottom: 50px;
   text-align: center;
   font-size: 12px;
   font-weight: 500;
@@ -144,4 +145,12 @@
   display: inline-flex;
   padding: 8px 0 6px;
   vertical-align: top;
+}
+.tui-pagination .tui-last,
+.tui-pagination .tui-first,
+.tui-pagination .tui-first-child,
+.tui-pagination .tui-last-child {
+  @media screen and (max-width: 320px) {
+    display: none;
+  }
 }
