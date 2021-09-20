@@ -1,4 +1,4 @@
-Командный проект написаный на Java Script. 
+Командный проект на Java Script. 
 
 Ссылка на живую страницу: 
 https://dianaaleksieieva.github.io/js-team-project-group3/
