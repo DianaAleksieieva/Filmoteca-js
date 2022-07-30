@@ -12,27 +12,27 @@
 
   &.header-home {
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url('../images/home1xdesk.jpg');
+      url('../images/home-background-img_2.jpg');
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url('../images/home2xdesk.jpg');
+        url('../images/home-background-img_2.jpg');
     }
 
     @media screen and (max-width: 768px) {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url('../images/home1xtab.jpg');
+        url('../images/home-background-img_2.jpg');
       @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-          url('../images/home2xtab.jpg');
+          url('../images/home-background-img_2.jpg');
       }
     }
 
     @media screen and (max-width: 320px) {
       background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-        url('../images/home1xmob.jpg');
+        url('../images/home-background-img_2.jpg');
       @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
         background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-          url('../images/home2xmob.jpg');
+          url('../images/home-background-img_2.jpg');
       }
     }
   }
