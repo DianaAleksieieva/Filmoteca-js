@@ -1,5 +1,5 @@
 Git page:
-https://dianaaleksieieva.github.io/js-team-project-group3/
+https://dianaaleksieieva.github.io/Filmoteca-js/
 
-Использованые текхнологии: 
+Used nechnologyes: 
 HTML, SASS, JS, localStorage, fetch, async function, Parsel, team work in Git
