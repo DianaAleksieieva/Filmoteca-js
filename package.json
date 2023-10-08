@@ -3,14 +3,14 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://DianaAleksieieva.github.io/js-team-project-group3.git",
+  "homepage": "https://dianaaleksieieva.github.io/Filmoteca-js/",
   "scripts": {
     "dev": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-team-project-group3/"
+    "build": "parcel build src/*.html --public-url /Filmoteca-js/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DianaAleksieieva/js-team-project-group3.git"
+    "url": "git+https://github.com/DianaAleksieieva/Filmoteca-js.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
